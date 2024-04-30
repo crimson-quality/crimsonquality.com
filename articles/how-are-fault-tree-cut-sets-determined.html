@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Crimson Quality - Relex - PTC Windchill - Articles - Automating BOM Entry in Windchill Prediction</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+    </noscript>
+    <meta name="theme-color" content="#1c1d26"/>
+</head>
+
+<body class="is-preload landing">
+<div id="page-wrapper">
+    <!-- Header -->
+    <header id="header">
+        <a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo"/></a>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../products.html">Products</a>
+                    <ul>
+                        <li><a href="../products/prediction.html">Windchill Prediction</a></li>
+                        <li><a href="../products/fmea.html">Windchill FMEA</a></li>
+                        <li><a href="../products/fta.html">Windchill FTA</a></li>
+                        <li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+                        <li><a href="../products/rbd.html">Windchill RBD</a></li>
+                        <li><a href="../products/weibull.html">Windchill Weibull</a></li>
+                        <li><a href="../products/alt.html">Windchill ALT</a></li>
+                        <li><a href="../products/markov.html">Windchill Markov</a></li>
+                        <li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+                        <li><a href="../products/lcc.html">Windchill LCC</a></li>
+                    </ul>
+                </li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../training.html">Training</a></li>
+                <li><a class="active" href="../articles.html">Articles</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../demo.html" class="button primary">Download Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="product-banner" class="article">
+        <div class="content">
+            <header class="minor">
+                <h2>How Are Fault Tree Cut Sets Determined?</h2>
+                <h5>Fault trees provide an effective means of risk assessment through the use of cut sets. This article
+                    explores some of the methods for cut set determination.</h5>
+            </header>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main" class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Introduction</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_888722133.png" alt=""></span>
+                        Fault tree analysis is often used as an effective means to assess system risk. By targeting a
+                        specific high-level event, such as a catastrophic failure or safety hazard, a fault tree can be
+                        constructed to assess the likelihood that this undesired (top) event will occur. Fault tree
+                        analysis can be performed using either a quantitative or a qualitative approach. In the
+                        quantitative approach, the numerical probabilities of specific events under analysis are
+                        determined. Using a qualitative approach, the analyst looks at specific events that
+                        individually, or in conjunction with other events, can cause the top event to occur. Both
+                        methods are efficient and effective, and the selection of the analysis approach to use depends
+                        on your specific needs as well as the system data you have on hand.</p>
+                    <p>This article takes a closer look at the qualitative approach to fault tree analysis: the
+                        determination of the cut sets of a fault tree. Once the cut sets of a fault tree are found, this
+                        information can be used to find ways to lower the probability of the top event from occurring,
+                        which lowers overall system risk.</p>
+                    <p>A cut set is any combination of fault tree events, which if they all occur, will cause the top
+                        event to occur. A minimal cut set is the smallest set of events, which if they all occur, will
+                        cause the top event to occur. In most instances, minimal cut sets are the essential items of
+                        interest to the fault tree analyst. This article uses the term “cut set” as a generic term to
+                        refer to a minimal cut set.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Methods to Determine Cut Sets</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_888722202.png" alt=""></span>
+                        Cut sets can be determined by various methods. Popular methods include:</p>
+                    <ul style="margin-left: 6%">
+                        <li>Inspection</li>
+                        <li>MOCUS (Method of Obtaining Cut Sets</li>
+                        <li>MICSUP (Minimal Cut Sets Upwards)</li>
+                        <li>ZBDD (Zero-Suppressed Binary Decision Diagrams)</li>
+                    </ul>
+                    <p>Each of these cut set generation approaches has its own unique methodology. This article
+                        describes
+                        the Inspection method and the MOCUS, MICSUP, and ZBDD cut set generation algorithms. While the
+                        Inspection method requires a manual visual review of fault trees to find cut sets, cut set
+                        generation algorithms are automated mathematical approaches for easily finding cut sets for even
+                        the
+                        most complicated fault trees. After demonstrating how the inspection method is used, this
+                        article
+                        provides examples of how the MOCUS and MICSUP algorithms generate cut sets for the same simple
+                        fault
+                        tree. A more detailed discussion on the ZBDD cut set generation algorithm will appear in a later
+                        article.</p>
+                    <p>Throughout this paper, the fault tree shown in Figure 2 is used for example purposes. It is a
+                        simple
+                        fault tree that can be used to identify the likelihood and means by which a motor will overheat.
+                        Working from the top down, the overheating could be the result of the motor itself overheating
+                        and/or there being excessive current to the motor. The excessive current to the motor is caused
+                        by
+                        excessive current in the circuit and primary fuse failure. Finally, there is excessive current
+                        when
+                        there is a wiring failure and/or a power supply failure.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Inspection Method</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>The inspection method requires that you identify all cut sets through a visual review of the
+                        fault tree diagram. In the fault tree in Figure 1, fault tree events are designated by the
+                        circles, and gates are designated by their logic symbols.</p>
+                    <p>To determine the cut sets for this fault tree, you must first find all the events in the fault
+                        tree. There are four events: A, B, C, and D. Next, you must figure out how these events in
+                        combination could cause the top event, Motor Overheats, to occur.</p>
+                    <p>First, you can tell that Event A occurring by itself can cause the motor to overheat, so this is
+                        one cut set.</p>
+                    <p>Second, you can tell that Gate 1 occurring can cause the motor to overheat as well. The events
+                        that can cause Gate 1 to occur are Event B in conjunction with Gate 2 (due to Gate 1 being an
+                        AND gate, both Gate 2 and Event B must occur together.) Gate 2 can occur as a result of either
+                        Event C or Event D. So, the cut sets from this branch are:</p>
+                </div>
+            </div>
+            <ul style="margin-left: 6%">
+                <li>Event B and Event C</li>
+                <li>Event B and Event D</li>
+            </ul>
+            <p>By inspection, you can determine that the following is a list of all possible cut sets from our
+                example fault tree:</p>
+            <ul style="margin-left: 6%">
+                <li>Event A</li>
+                <li>Event B and Event C</li>
+                <li> Event B and Event D</li>
+            </ul>
+            <div class="row">
+                <div class="col-12">
+                    <p>Just by this very simple example, you can see why the Inspection method quickly becomes
+                        unmanageable. Once your fault tree grows in complexity, the manual Inspection method becomes
+                        cumbersome and error prone. This is why the Inspection method is rarely used in real-world
+                        applications and is replaced by more automated methods.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>MOCUS Method</h2>
+                </div>
+                <p>MOCUS (Method of Obtaining Cut Sets) is a top-down approach to cut set determination. The MOCUS
+                    algorithm was proposed by Fussell and Vesely in 1972. It is based on the observation that OR gates
+                    increase the quantity of cut sets, while AND gates increase the size of cut sets.</p>
+                <p>The MOCUS algorithm is defined as follows:</p>
+                <ol style="margin-left: 6%">
+                    <li>Assign a unique identifier to each gate and event, making sure to use the same identifier for
+                        repeated events.
+                    </li>
+                    <li>Proceed stepwise from the top event downward, listing the identifiers, where the initial entry
+                        in the list is the identifier of the top event.
+                    </li>
+                    <li>Replace each intermediate event (any gate) with the proper identifier based on the tree logic:
+                    </li>
+                    <ul style="margin-left: 4%">
+                        <li>If the list contains the identifier of an OR gate, then create multiple lists of events by
+                            replacing the identifier with the identifier(s) of its input(s).
+                        </li>
+                        <li>If the list contains the identifier of an AND gate, then enlarge the list by replacing the
+                            identifier with the identifiers of its inputs.
+                        </li>
+                    </ul>
+                    <li>Repeat the process until all intermediate identifiers have been resolved.</li>
+                    <li>Remove any supersets (cut sets that include other cut sets) to obtain minimal cut sets.</li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Using Figure 2 and the MOCUS algorithm, cut sets can be generated as follows:</p>
+                </div>
+                <ol style="margin-left: 6%">
+                    <li>Use the unique identifiers already assigned in Figure 2: TOP, Event A, Gate 1, Gate 2, Event B,
+                        Event C, and Event D.
+                    </li>
+                    <li>Proceeding from the top, the cut sets are:</li>
+                    <ul style="margin-left: 4%">
+                        <li>Event A</li>
+                        <li>Gate 1</li>
+                    </ul>
+                    <li>Event A is already a terminal event, but Gate 1 must be further resolved. Gate 1 (an AND gate)
+                        can be replaced with Gate 2 and Event B. So, the cut sets are:
+                    </li>
+                    <ul style="margin-left: 4%">
+                        <li>Event A</li>
+                        <li>Gate 2 and Event B</li>
+                    </ul>
+                    <li>Event B is already a terminal event, but Gate 2 must be further resolved. Gate 2 (an OR gate)
+                        can be replaced by Event C or Event D. So, the cut sets are:
+                    </li>
+                    <ul style="margin-left: 4%">
+                        <li>Event A</li>
+                        <li>Event C and Event B</li>
+                        <li>Event D and Event B</li>
+                    </ul>
+                    <li>At this point, all intermediate events have been resolved, and there are no supersets to remove.
+                        So, the TOP event has the three cut sets listed in step 4. Notice how the AND gate logic
+                        resulted in larger cut sets, and the OR gate logic resulted in more cut sets. The final list of
+                        cut sets using the MOCUS method are:
+                    </li>
+                    <ul style="margin-left: 4%">
+                        <li>Event A</li>
+                        <li>Event C and Event B</li>
+                        <li>Event D and Event B</li>
+                    </ul>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>MICSUP Method</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>JMICSUP (Minimal Cut Sets Upwards) is a bottom-up approach for cut set determination. The MICSUP
+                        algorithm was proposed by Pande, Spector, and Chatterjee in the mid 1970s. It works in a similar
+                        fashion to the MOCUS method. The MICSUP algorithm is defined as follows:</p>
+                </div>
+                <ol style="margin-left: 6%">
+                    <li>Assign a unique identifier to each gate and event, making sure to use the same identifier for
+                        repeated events.
+                    </li>
+                    <li>Find cut sets for intermediate events (gates) at the lowest level, specifically those that have
+                        only terminal events in their branches.
+                    </li>
+                    <li>Obtain the minimal cut sets of higher-level intermediate events (gates) by substituting the
+                        minimal cut sets of lower-level gates.
+                    </li>
+                    <li>Use Boolean reduction rules where necessary to obtain minimal cut sets.</li>
+                </ol>
+                <div>
+                    <p>Using Figure 2 and the MICSUP algorithm, cut sets can be generated as follows:</p>
+                </div>
+                <ol style="margin-left: 6%">
+                    <li>Use the unique identifiers already assigned in Figure 1: TOP, Event A, Gate 1, Gate 2, Event B,
+                        Event C, and Event D.
+                    </li>
+                    <li>Gate 2 is a lowest-level intermediate gate, and its cut sets are:</li>
+                    <ul style="margin-left: 4%">
+                        <li>Event C</li>
+                        <li>Event D</li>
+                    </ul>
+                    <li>Gate 1 is the next-lowest intermediate gate, and its cut set is Gate 2 and Event B. You already
+                        know Gate 2 cut sets. For Gate 1, the cut sets are:
+                    </li>
+                    <ul style="margin-left: 6%">
+                        <li>Event C and Event B</li>
+                        <li>Event D and Event B</li>
+                    </ul>
+                    <li>TOP is the final intermediate gate and, in this case, the top gate. Its cut sets are:</li>
+                    <ul style="margin-left: 6%">
+                        <li>Event A</li>
+                        <li>Gate 1</li>
+                    </ul>
+                    <li>You already know Gate 1 cut sets. For TOP, the cut sets are:</li>
+                    <ul style="margin-left: 6%">
+                        <li>Event A</li>
+                        <li>Event C and Event B</li>
+                        <li>Event D and Event B</li>
+                    </ul>
+                    <li>At this point, all intermediate events have been resolved, and there is no Boolean reduction
+                        necessary for this example. So, the resulting cut sets for Figure 1 using the MICSUP method are:
+                    </li>
+                    <ul style="margin-left: 6%">
+                        <li>Event A</li>
+                        <li>Event C and Event B</li>
+                        <li>Event D and Event B</li>
+                    </ul>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Conclusion</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Determination of cut sets for small fault trees can be achieved using the simple visual
+                        Inspection method. However, for larger, more complex fault trees, cut set generation algorithms
+                        must be employed. Cut set generation algorithms can be easily computerized to allow for the
+                        determination of cut sets in a reasonable amount of time, even for very large, complex fault
+                        trees.</p>
+                    <p>Windchill FTA (formerly Relex FTA) employs cut set generation algorithms to determine cut sets.
+                        Windchill FTA supports both qualitative and quantitative analyses and a wide variety of gates
+                        and events so that you can model and analyze complex, real-world systems and processes. For
+                        additional information about Windchill FTA (formerly Relex FTA) and how it can be used to
+                        calculate minimal cut sets, please visit <a href="../products/fta.html">www.crimsonquality.com/fta.</a>
+                    </p>
+                    </div>
+                </div>
+        </div>
+                    <div id="returnbar" class="wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 align-center">
+                                    <a href="../articles.html" class="button">Back to articles index</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <footer id="footer">
+                        <div class="row d-none d-sm-block">
+                            <div class="col-12">
+                                <p>
+                                    <a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                                            class="label">Email</span></a>
+                                    <span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+                                    <span class="hidden-small">&middot</span>
+                                </p>
+                            </div>
+
+                            <div class="col-12">
+                                <p>
+                                    <span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+                                    <span>(724) 510-0100</span>
+                                    <span class="hidden-small">&middot</span>
+                                </p>
+                            </div>
+
+                            <div class="col-12">
+                                <p>
+                                    <span class="icon solid alt fa-map"><span class="label">Address</span></span>
+                                    <span>Export, PA 15632</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-sm-none">
+                            <ul class="icons">
+                                <li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                                        class="label">Email</span></a></li>
+                                <li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+                                <li>&middot</li>
+                                <li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+                                </li>
+                                <li>(724) 510-0100</li>
+                                <li>&middot</li>
+                                <li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+                                <li>Export, PA 15632</li>
+                            </ul>
+                        </div>
+
+                        <ul class="copyright">
+                            <li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+                            <li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+                            </li>
+                            <script type="text/javascript">
+                                // set the year to the current year
+                                const el = document.getElementById("year");
+                                el.innerText = `${new Date().getFullYear()}`;
+                            </script>
+                        </ul>
+                    </footer>
+
+                </div>
+
+                <!-- Scripts -->
+                <script src="../assets/js/jquery.min.js"></script>
+                <script src="../assets/js/jquery.scrolly.min.js"></script>
+                <script src="../assets/js/jquery.dropotron.min.js"></script>
+                <script src="../assets/js/jquery.scrollex.min.js"></script>
+                <script src="../assets/js/browser.min.js"></script>
+                <script src="../assets/js/breakpoints.min.js"></script>
+                <script src="../assets/js/util.js"></script>
+                <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

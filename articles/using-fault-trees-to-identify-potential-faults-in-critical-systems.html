@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Crimson Quality - Relex - PTC Windchill - Articles - Automating BOM Entry in Windchill Prediction</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+    </noscript>
+    <meta name="theme-color" content="#1c1d26"/>
+</head>
+
+<body class="is-preload landing">
+<div id="page-wrapper">
+    <!-- Header -->
+    <header id="header">
+        <a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo"/></a>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../products.html">Products</a>
+                    <ul>
+                        <li><a href="../products/prediction.html">Windchill Prediction</a></li>
+                        <li><a href="../products/fmea.html">Windchill FMEA</a></li>
+                        <li><a href="../products/fta.html">Windchill FTA</a></li>
+                        <li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+                        <li><a href="../products/rbd.html">Windchill RBD</a></li>
+                        <li><a href="../products/weibull.html">Windchill Weibull</a></li>
+                        <li><a href="../products/alt.html">Windchill ALT</a></li>
+                        <li><a href="../products/markov.html">Windchill Markov</a></li>
+                        <li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+                        <li><a href="../products/lcc.html">Windchill LCC</a></li>
+                    </ul>
+                </li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../training.html">Training</a></li>
+                <li><a class="active" href="../articles.html">Articles</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../demo.html" class="button primary">Download Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="product-banner" class="article">
+        <div class="content">
+            <header class="minor">
+                <h2>Using Fault Trees to Identify Potential Faults in Critical Systems</h2>
+            </header>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main" class="wrapper">
+        <div class="container">
+            <div><img src="../images/cache_888948080.png" alt=""></div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Visualize the Events that Lead to Component Failure</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_888721797.png" alt=""></span>
+                        Fault Tree Analysis (FTA) is well recognized worldwide as an important tool for evaluating
+                        safety and reliability in system design, development, and operation. For more than 40 years, FTA
+                        has been used in the aerospace, nuclear, and transportation industries to translate the failure
+                        behavior of a system into a visual diagram that displays system relationships and root cause
+                        failure paths. A fault tree provides a concise, visual representation of the various
+                        combinations of possible occurrences within a system that can result in a predefined and
+                        undesirable event. FTA is most often used for:</p>
+                    <ul style="margin-left: 6%">
+                        <li>Identifying safety critical components.</li>
+                        <li>Verifying product requirements.</li>
+                        <li>Certifying product reliability.</li>
+                        <li>Assessing product risk.</li>
+                        <li>Investigating accidents/incidents.</li>
+                        <li>Evaluating design changes.</li>
+                        <li>Displaying the causes and consequences of events.</li>
+                        <li>Identifying common-cause failures.</li>
+                    </ul>
+                    <p>FTA is a deductive analysis method that begins with a general conclusion (a system-level
+                        undesirable event) and then attempts to determine the specific causes of this conclusion. Based
+                        on a set of rules and logic symbols from probability theory and Boolean algebra, FTA uses a
+                        top-down approach to generate a logic model that provides for both qualitative and quantitative
+                        evaluation of system reliability.</p>
+                    <p>The undesirable event at the system level is referred to as the top event. It generally
+                        represents a system failure mode or hazard for which predicted availability data is required.
+                        The lower level events in each branch of a fault tree are referred to as basic events. They
+                        represent hardware, software, and human failures for which the probability of failure is given
+                        based on historical data. Basic events are linked via logic symbols (gates) to one or more
+                        undesirable top events.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>FTA Software Tools</h2>
+                    <p>Small fault trees have fewer than 100 events, medium fault trees have from 100 to 1,000 events,
+                        and large fault trees have more than 1,000 events! Today, FTA software tools can be used to
+                        analyze very complex systems as well as very complex relationships between hardware, software,
+                        and humans. Using good FTA software, you can calculate, cut, copy, paste, rearrange, and delete
+                        events and gates to various fault tree branches to quickly and easily compare different hardware
+                        configurations. An example of a computer-generated fault tree follows.</p>
+                </div>
+            </div>
+            <div style="text-align:center"><img class="rounded" alt="" src="../images/cache_888720494.png"></div>
+            <div class="row">
+                <div class="col-12">
+                    <p>In the above figure, "Passenger Injury Occurs in Elevator" is defined as the top event. The
+                        reasons why passenger injury in an elevator could occur have been determined to be either that
+                        the box free falls or that the door is open at an inappropriate time. After determining all
+                        possible causes for each event identified, the events and gates for connecting them to
+                        higher-level events are added to the fault tree. Any faults that can be further developed to
+                        determine causes are then added as lower-level events and connected by the appropriate
+                        gates.</p>
+                    <p>The lowest-level events that terminate fault tree paths are called basic events or primary
+                        events. They are either component-level events that cannot be further resolved or external
+                        events. For example, in the first level of possible events for the free fall of the box, "Cable
+                        off Pulley" and "Broken Cable" are basic events. Because these events are primary faults, they
+                        are not developed any further in the fault tree.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Fault Tree Construction</h2>
+                    <p>To construct a useful fault tree, the analyst must fully understand the system as an integrated
+                        interaction of subsystems. In addition to having a logical mind and the ability to visualize the
+                        logic structure and interaction of a system and its subsystems, the analyst must have knowledge
+                        of the dependencies between the components, their reliability parameters, and the conditions
+                        that determine the components that are considered to have failed. Thus, good analysts are
+                        generally experts in mechanical, structural, electrical, and control systems and also have an
+                        understanding of human interactions, procedural implications, and even chemical
+                        interactions.</p>
+                    <p>The most common errors in constructing fault trees include:</p>
+                    <ul style="margin-left: 6%;">
+                        <li>
+                            Using too wide of a scope for the top event, which results in a large, complex, and
+                            unfocused fault tree.
+                        </li>
+                        <li>Using inconsistent nomenclature for the same events, which prevents you from finding events
+                            that occur in multiple branches of the fault tree.
+                        </li>
+                        <li>Using the same nomenclature for similar but different components, thereby identifying the
+                            same failure for several scenarios when these failures are actually caused by different
+                            components.
+                        </li>
+                        <li>Breaking the fault tree into branches by electrical, mechanical, and structural subsystems,
+                            thereby failing to take the interface and integration of the system into account.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="alt">Top Event Definition</h3>
+                    <p>Because the top event sets the tone for the series of questions that are considered when
+                        constructing the fault tree, the analyst should use the system definition to construct a clear
+                        and concise top event. If a top event is vaguely stated, the fault tree is likely to be large,
+                        complex, and unfocused. Specifying the specific mission phase or portion of the mission to which
+                        a top event applies in the description of the top event often helps to generate a very concise
+                        fault tree.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="alt">Event Nomenclature</h3>
+                    <p>During fault tree creation, consistently applying the appropriate nomenclature to events is
+                        critical to identifying the same event in multiple fault tree branches. If, for example, you
+                        give an event a different name in another branch of the fault tree, cutset analysis (described
+                        below) identifies multiple events leading to different failures (rather than the same event
+                        leading to different failures). If you do not realize that nomenclature errors exist, you may
+                        not recognize an event as a major contributor to the top event and thereby fail to recommend
+                        improvements or controls for it. Similarly, when two identical components are installed in
+                        different locations within a system, you must be sure to identify that they are physically
+                        different components by using reference designators in the nomenclature. Otherwise, cutset
+                        analysis identifies how the same component failure contributes to several scenarios when the
+                        failures are actually caused by different components.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="alt">Branch Arrangement</h3>
+                    <p>Because engineering groups so often function autonomously, fitting each piece of hardware
+                        together in a system tends to be an afterthought. Organizations that regularly categorize work
+                        by engineering disciplines tend to arrange the branches of a fault tree by subsystems. However,
+                        such an arrangement limits FTA to considering only component failures. When engineering groups
+                        fail to properly coordinate and implement a design as a team, interfaces and interactions are
+                        most often the areas in which the system breaks down. When fault tree branches are arranged by
+                        subsystems, these areas are never even addressed.</p>
+                    <p>When scenarios that lead to the top event are used to arrange fault tree branches, the analyst
+                        can place faults under the cause for a component failure. Causes can include not only hardware
+                        failures but also interface and integration problems due to design flaws, software, human
+                        errors, operation and maintenance errors, and environmental influences on the system. Fault
+                        trees arranged by scenarios often uncover complex relationships and interactions of systems,
+                        components, and actions that are believed to be unrelated. For example, such an FTA can reveal a
+                        single-point component failure that can fail two supposedly redundant or independent
+                        systems.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Fault Tree Analysis</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_888721805.png" alt=""></span>After
+                        properly identifying all failures, events, and conditions that can lead to the occurrence of the
+                        top event, you can calculate the probability of the top event and measure the relative impact of
+                        a design change. The traditional analysis process is to generate the system minimal cut sets,
+                        apply the basic event probabilistic data, and then determine the probability of the top event.
+                    </p>
+                    <p>The qualitative analysis of fault trees is based on determining the minimal cutsets for the top
+                        event. Cutsets identify the sets of events that cause the top event to occur. A cutset can be a
+                        single-point failure or event or can be a set of many events. Different cutsets can include
+                        different combinations of the same event. A minimal cutset is the smallest group of events that
+                        cause the top event to occur. In large trees, the events that cause the top event to occur are
+                        often buried deep within the system and are not easily discovered without performing cutset
+                        analysis.</p>
+                    <p>The basic events that belong to a cutset provide such information as single-point failures and
+                        the relative contributions of each cutset. Generally, the cutsets that have the highest
+                        probability of occurrence are the ones that have the fewest number of events. Thus, the minimal
+                        cutset information obtained during qualitative analysis can be used for computing the
+                        unavailability and unreliability values of the system during quantitative analysis. For
+                        quantitative analysis, reliability and maintainability information such as failure probability
+                        or repair rate is used to determine or quantify the probability of occurrence of the top event.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Conclusion</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Because FTA is an event-oriented analysis, it can identify more possible failure causes than
+                        structure-oriented FMEAs (Failure Modes and Effects Analysis) and RBDs (Reliability Block
+                        Diagrams), which allow only hardware failure considerations. When performed correctly, FTA often
+                        identifies system problems that other design and analytical methods would overlook.</p>
+                    <p>For additional information about Windchill FTA (formerly Relex FTA) and how it can be used to
+                        help identify faults in critical systems, please visit <a href="../products/fta.html">www.crimsonquality.com/fta</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="returnbar" class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 align-center">
+                        <a href="../articles.html" class="button">Back to articles index</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="row d-none d-sm-block">
+                <div class="col-12">
+                    <p>
+                        <a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                                class="label">Email</span></a>
+                        <span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+                        <span class="hidden-small">&middot</span>
+                    </p>
+                </div>
+
+                <div class="col-12">
+                    <p>
+                        <span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+                        <span>(724) 510-0100</span>
+                        <span class="hidden-small">&middot</span>
+                    </p>
+                </div>
+
+                <div class="col-12">
+                    <p>
+                        <span class="icon solid alt fa-map"><span class="label">Address</span></span>
+                        <span>Export, PA 15632</span>
+                    </p>
+                </div>
+            </div>
+            <div class="d-sm-none">
+                <ul class="icons">
+                    <li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                            class="label">Email</span></a></li>
+                    <li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+                    <li>&middot</li>
+                    <li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span></li>
+                    <li>(724) 510-0100</li>
+                    <li>&middot</li>
+                    <li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+                    <li>Export, PA 15632</li>
+                </ul>
+            </div>
+
+            <ul class="copyright">
+                <li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+                <li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+                <script type="text/javascript">
+                    // set the year to the current year
+                    const el = document.getElementById("year");
+                    el.innerText = `${new Date().getFullYear()}`;
+                </script>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/jquery.dropotron.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Crimson Quality - Relex - PTC Windchill - Articles - Automating BOM Entry in Windchill Prediction</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+	<meta name="theme-color" content="#1c1d26" />
+</head>
+
+<body class="is-preload landing">
+	<div id="page-wrapper">
+		<!-- Header -->
+		<header id="header">
+			<a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo" /></a>
+			<nav id="nav">
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="../products.html">Products</a>
+						<ul>
+							<li><a href="../products/prediction.html">Windchill Prediction</a></li>
+							<li><a href="../products/fmea.html">Windchill FMEA</a></li>
+							<li><a href="../products/fta.html">Windchill FTA</a></li>
+							<li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+							<li><a href="../products/rbd.html">Windchill RBD</a></li>
+							<li><a href="../products/weibull.html">Windchill Weibull</a></li>
+							<li><a href="../products/alt.html">Windchill ALT</a></li>
+							<li><a href="../products/markov.html">Windchill Markov</a></li>
+							<li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+							<li><a href="../products/lcc.html">Windchill LCC</a></li>
+						</ul>
+					</li>
+					<li><a href="../services.html">Services</a></li>
+					<li><a href="../training.html">Training</a></li>
+					<li><a class="active" href="../articles.html">Articles</a></li>
+					<li><a href="../contact.html">Contact Us</a></li>
+					<li><a href="../demo.html" class="button primary">Download Demo</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="product-banner" class="article">
+			<div class="content">
+				<header class="minor">
+					<h2>Automating BOM Entry in Windchill Prediction</h2>
+					<h5>One of the major time saving features of the Windchill Prediction tool is the built in Import Wizard.</h5>
+				</header>
+			</div>
+		</section>
+
+		<!-- Main -->
+		<div id="main" class="wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<p>One of the major time saving features of the Windchill Prediction tool is the built in Import Wizard.
+							Instead of having to manually enter each part into the tool, Windchill Prediction can import a Bill of
+							Materials (BOM) from common file formats such as Excel, Access, SML or Text File. This feature creates a
+							simple step by step process that walks through the data importing process. If the BOMs are always created
+							in
+							the same format, once the first import has been mapped out, the settings can be saved to an Import/Export
+							Template. This allows the user to select the template during future import processes, and saves the time
+							required to map out data fields.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h2 class="alt">Create a new project to import the first BOM.</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<p><span class="image right"><img src="../images/teaserbox_893000810.jpg" alt=""></span>
+							If you do not have an existing Project, a new Project must be created to import the data. To create a new
+							project, open the <strong>Project Navigator</strong> and click <strong>Create a New Project.</strong></p>
+						<p>Now that a fresh, blank Project has been created, the BOM can be imported. To do this, use the built in
+							<strong>Import Wizard.</strong> For this example, the import will be a parts list from an Excel file.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h2 class="alt">Using the Import Wizard</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h3>1. Open the Import Wizard</h3>
+						<ul class="container">
+						<span class="image right"><img src="../images/teaserbox_893130550.png" alt=""></span>
+							<li>From the <span class="accent">Tools</span> menu, select <span class="accent">Import Wizard</span>.
+								Since this will be the first BOM imported,
+								select <span class="accent">Perform a custom import</span>, and click <span class="accent">Next.</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h3>2. Importing A New Template Or Loading A Prexisting Template</h3>
+						<ul class="container">
+						<span class="image right"><img src="../images/teaserbox_893130819.jpeg" alt=""></span>
+							<li>
+								For this example, chose <span class="accent">Perform a custom import</span> and click <span
+									class="accent">Next</span>. When importing a BOM for the first time or not loading a BOM from an
+								existing template, this is the correct choice.
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h3>3. Browse To The Desired BOM File To Be Imported</h3>
+						<ul class="container">
+						<span class="image right"><img src="../images/teaserbox_893130819.jpeg" alt=""></span>
+							<li>
+								To browse to the to be imported, click the browse button [...] navigate to where the BOM file is located.  Select the file, click <span class="accent">Open</span>, then <span class="accent">Next</span>.
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h4>Reliability Measurement Table</h4>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Reliability Measure</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Failure Rate</td>
+										<td>
+											The expected rate of occurrence of failure or the number of failures in a specified time period.
+											Failure rate is typically expressed in failures per million or billion hours. For example, if your
+											television has a failure rate of five failures per million hours, you can watch one million
+											hour-long television shows and likely experience a failure during only five shows!
+										</td>
+									</tr>
+									<tr>
+										<td>Mean Time Between Failures (MTBF)</td>
+										<td>The number of hours to pass between failures. MTBF is typically expressed in hours. As an
+											example,
+											if the MTBF of your television is 1000 hours, you can on average watch it for 1000 hours before it
+											will fail. This does not indicate that your television will fail exactly in the 1000th hour of
+											watching, but that it will generally fail somewhere around 1000 hours of operation. For many
+											systems
+											(those which are defined as "constant failure rate systems"), MTBF is the inverse of the failure
+											rate.
+											This means that if the failure rate is two failures per million hours, the MTBF is equal to
+											1000000/2,
+											or 500,000 hours.
+										</td>
+									</tr>
+									<tr>
+										<td>Mean Time to Failure (MTTF)</td>
+										<td>The average time to failure for a system that is not repairable. For example, a satellite is
+											typically not repairable. In such a case, the MTTF, or Mean Time to Failure, is used as the metric
+											for
+											measuring reliability. Once the failure occurs, the system cannot be replaced or repaired. This is
+											different from a repairable system (television) described in the above example. If your television
+											fails somewhere around the 1000th hour, you will get it repaired. It will then operate for about
+											another 1000 hours (on average) or so before it needs to be repaired again.
+										</td>
+									</tr>
+									<tr>
+										<td>Reliability</td>
+										<td>The probability that the item will perform a required function without failure under stated
+											conditions for a stated period of time. Reliability is significant because it takes into account
+											time.
+											The measure of reliability answers the question: "How likely is it that my system will remain
+											operational over a certain period of time?" Because reliability is expressed as probability, it is
+											always a value between 0 and 1.
+										</td>
+									</tr>
+									<tr>
+										<td>Availability</td>
+										<td>Availability, also a probability value, indicates the probability that a system is operating at
+											a
+											particular point in time. It answers the question: "How likely is it that my system is operating
+											X hours out of a Y hour time frame?" Availability differs from reliability because it factors
+											repairs
+											into the measurement. To determine availability, the time to perform a repair must be known.
+											Because availability is expressed as a probability, it is a value between 0 and 1.
+										</td>
+									</tr>
+									<tr>
+										<td>Mean Time to Repair (MTTR)</td>
+										<td>The average time to return a failed item to an operable state. The MTTR, or Mean Time to Repair,
+											is
+											normally expressed in hours and indicates how long it takes to repair a system that is down due
+											to a failure. Generally, MTTR does not include logistics time, such as the time required to
+											receive a
+											replacement part. MTTR indicates the actual time it takes to correct the problem.
+										</td>
+									</tr>
+									<tr>
+										<td>Unreliability</td>
+										<td>Unreliabiity is the complement of reliability. If your reliability is 0.9, the unreliability is
+											equal to 0.1 (1.0 - 0.9). It is a probability value, or a number between 0 and 1, that indicates
+											the likelihood that a system cannot continuously operate up to a specified point in time.
+										</td>
+									</tr>
+									<tr>
+										<td>Unavailability</td>
+										<td>Like unreliability, unavailability is the complement of availability. It is a probability value,
+											or
+											a number between 0 and 1, that indicates the likelihood that a system is not operatinal for a
+											specified period of time.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p>There are many sources of confusion surrounding the use of reliability measures, especially in regards to
+							MTTF and MTBF.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h3>What reliability analysis techniques are currently available?</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<p>Because the reliability field is broad, there are many different types of reliability analysis techniques
+							available. The table below outlines some of the more widely used analyses for reliability assessment. For
+							organizational purposes, these techniques have been classified into three categories: Reliability
+							Evaluation, Risk Assessment, and Specific Use Tools. However, the techniques are not limited to that one
+							category (e.g. FTA can be used for Risk Assessment and Reliability Evaluation).</p>
+						<div class="table-wrapper">
+							<table id="table-1" class="alt">
+								<thead>
+									<tr>
+										<th>Reliability Analysis Technique</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td colspan="2">
+											<span class="accent">Reliability Evaluation</span>
+											<br>
+											<span class="required">The techniques is this category are used to determine system
+												reliability metrics.</span>
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/prediction.html" target="_self">Reliability Prediction</a></td>
+										<td>
+											Used to predict the likely failure rates of components and/or systems. Predicted failure rates are
+											computed using statistically developed models based on component and environmental parameters.
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/rbd.html" target="_self">Reliability Block Diagram (RBD)</a></td>
+										<td>
+											Used to assess reliability metrics of complex systems that employ redundancy and other methods to
+											increase reliability. RBDs use sophisticated modelling techniques, including system simulations,
+											to
+											determine reliability.
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/markov.html" target="_self">Markov Analysis</a></td>
+										<td>
+											A very broad analysis tool that can be used to model a wide array of complex, state dependent
+											systems.
+											Markov analysis is used to calculate the reliability results for varied systems, especially those
+											with
+											sequence dependencies.
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<span class="accent">Risk Assessment</span>
+											<br>
+											<span class="required">The techniques in this category identify potential risk areas and assess
+												techniques or actions that can be used to minimize risk factors. These techniques are used
+												extensively in safety-related systems.</span>
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/fmea.html" target="_self">Failure Modes and Effects Analysis (FMEA)</a>
+										</td>
+										<td>
+											Used to identify the effects of various failure modes on a system, identify how critical the
+											effects
+											of these failurs are on a system, and identify actions to elminate or mitigate those failure
+											modes.
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/fta.html" target="_self">Fault Tree Analysis (FTA)</a></td>
+										<td>
+											Used to identify all possible causes (or combination of cause) that result in a system failure.
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<span class="accent">Specific Use Tools</span>
+											<br>
+											<span class="required">The techniques in this category are used for a particular type of
+												reliability
+												assessment.</span>
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/fracas.html" target="_self">Failure Reporting,
+												Analysis and Corrective Action System (FRACAS)</a></td>
+										<td>
+											Widely used process for recording field failures, analyzing those failures for root cause,
+											identifying
+											trends across a population of products, and tracking corrective and preventive actions intended to
+											preclude recurrence of the root cause.
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/weibull.html" target="_self">Weibull Analysis</a></td>
+										<td>
+											General, encompassing statistical tool for assessing failure time distributions via optimization
+											techniques and predictive analyses. Used for failure forecasting based on sampls of actual field,
+											or
+											life data.
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/alt.html" target="_self">Accelerated Life Testing (ALT)</a></td>
+										<td>
+											Uses statistical methods to analyze accelerated life testing data identify characteristic failure
+											behavior and predict product reliability.
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/prediction.html" target="_self">Maintainability Prediction</a></td>
+										<td>
+											Used to determine the Mean Time to Repair (MTTR) for various components to aid in the development
+											of
+											maintenance plans for the system.
+										</td>
+									</tr>
+									<tr>
+										<td><a href="../products/lcc.html" target="_self">Life Cycle Cost Analysis</a></td>
+										<td>
+											Used to determine the total lifetime costs of the system, factoring in metrics such as failure
+											rates
+											and repair costs.
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p>
+							Oftentimes, the reliability analyst may employ several tools depending on requirements. For example, if
+							you
+							were required to forecast the rate at which the system will fail, you would have to perform a reliability
+							prediction. If you were also required to identify all of the possible events that could result in a system
+							failure, you would have to perform a FMEA.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h3>Summary</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<p>The importance of reliability for business success is undeniable. To accurately track and measure
+							reliability parameters, a wide array of techniques has been developed. Many of these analyses can be
+							performed using software tools developed for the reliability practitioner. Windchill Quality Solutions is
+							a
+							reliability analysis toolset that can help you to perform a number of these analysis types. For additional
+							information about Windchill Quality Solution software products, please visit
+							<a href="../products.html">crimsonquality.com/products</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="returnbar" class="wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 align-center">
+						<a href="../articles.html" class="button">Back to articles index</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="row d-none d-sm-block">
+				<div class="col-12">
+					<p>
+						<a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+								class="label">Email</span></a>
+						<span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+						<span class="hidden-small">&middot</span>
+					</p>
+				</div>
+
+				<div class="col-12">
+					<p>
+						<span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+						<span>(724) 510-0100</span>
+						<span class="hidden-small">&middot</span>
+					</p>
+				</div>
+
+				<div class="col-12">
+					<p>
+						<span class="icon solid alt fa-map"><span class="label">Address</span></span>
+						<span>Export, PA 15632</span>
+					</p>
+				</div>
+			</div>
+			<div class="d-sm-none">
+				<ul class="icons">
+					<li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+								class="label">Email</span></a></li>
+					<li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+					<li>&middot</li>
+					<li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span></li>
+					<li>(724) 510-0100</li>
+					<li>&middot</li>
+					<li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+					<li>Export, PA 15632</li>
+				</ul>
+			</div>
+
+			<ul class="copyright">
+				<li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+				<li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+				<script type="text/javascript">
+            // set the year to the current year
+            const el = document.getElementById("year");
+            el.innerText = `${new Date().getFullYear()}`;
+				</script>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/jquery.dropotron.min.js"></script>
+	<script src="../assets/js/jquery.scrollex.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crimson Quality - Relex - PTC Windchill - Articles - Reliability Prediction Models Part 3</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+  <noscript>
+    <link rel="stylesheet" href="../assets/css/noscript.css"/>
+  </noscript>
+  <meta name="theme-color" content="#1c1d26"/>
+</head>
+<body class="is-preload landing">
+<div id="page-wrapper">
+  <!-- Header -->
+  <header id="header">
+    <a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo" /></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../products.html">Products</a>
+          <ul>
+            <li><a href="../products/prediction.html">Windchill Prediction</a></li>
+            <li><a href="../products/fmea.html">Windchill FMEA</a></li>
+            <li><a href="../products/fta.html">Windchill FTA</a></li>
+            <li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+            <li><a href="../products/rbd.html">Windchill RBD</a></li>
+            <li><a href="../products/weibull.html">Windchill Weibull</a></li>
+            <li><a href="../products/alt.html">Windchill ALT</a></li>
+            <li><a href="../products/markov.html">Windchill Markov</a></li>
+            <li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+            <li><a href="../products/lcc.html">Windchill LCC</a></li>
+          </ul>
+        </li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../training.html">Training</a></li>
+        <li><a class="active" href="../articles.html">Articles</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+        <li><a href="../demo.html" class="button primary">Download Demo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="product-banner" class="article">
+    <div class="content">
+      <header>
+        <h2>Reliability Prediction Models</h2>
+        <p>Note: This is the third part of a three-part article. It provides guidelines for making a sound judgment when
+          deciding which reliability prediction standard to apply to a particular analysis. Part I identified the major
+          factors in reliability prediction models that contribute to predicting component failure. Part II, described
+          the most widely accepted reliability prediction standards applied in current projects. </p>
+        <h5>Part 3 of 3</h5>
+      </header>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <div id="main" class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Introduction</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>
+            <span class="image right"><img id="fig-1" src="../images/cache_886001919.png" alt="MTBF vs Environment">
+              <label class="img-label" for="fig-1">MTBF vs Environment</label>
+            </span>
+            The selection of a prediction standard to use for analysis is a critical one. Except in cases where the
+            standard has been specified by your customer, there is no single correct answer for every situation. Many
+            factors must be taken into account when determining which standard is best for your specific needs.
+          </p>
+          <p>One effective way to decide which prediction standard to employ is to understand the underlying
+            similarities and differences between the standards. Armed with this information, you can select the standard
+            that best fits a particular situation.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3>Understanding Similarities</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Analysis Methodology</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>No matter which standard is chosen, the MTBF prediction assumes that all components in the system are in
+            series, and this a failure of any component will result in a system failure. The authors of each standard
+            have used either test data or field data from manufacturers to determine empirical equations for predicting
+            the failure rate of a particular part type.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Contributing Factors</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p><span class="image left"><img id="fig-2" src="../images/cache_886001934.png" alt="Pi Factors">
+          <label class="img-label">Pi Factors</label></span>
+            The standards use the same factors to calculate the failure rate of a part: part type, environment,
+            temperature, quality, and electrical stress. These factors have different weights in different standards,
+            but the failure rate is based on these factors. To improve the reliability of a system, these five factors
+            could be improved. For example, the failure rate will be lower for a system operating at 20 degrees Celsius
+            than it will be for a system operating at 40 degrees Celsius.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">"What-If?" Studies</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>One of the most common and advantageous uses of predictions is to compare two different designs of a
+            product. It is beneficial to know the impact of different designs on the reliability of a product before
+            finalizing the design. If a warranty will be offered, it could save money to determine which of the designs
+            is predicted to be more reliable. MTBF predictions can be used for a trade-off study, regardless of which
+            standard is used.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Global Use</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Each standard was written to be used in a variety of different applications and industries. Each standard
+            supplies an assortment of environments and allows for a large range of temperatures so that it can be
+            utilized for applications worldwide. Translations give the standards a global presence and expand their use
+            to many countries.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3>Understanding Differences</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Failure Rate Adjustment Techniques</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p><span class="image right"><img id="fig-3" src="../images/cache_886001947.png"
+                                            alt="Process Grade Questions">
+          <label for="fig-3" class="img-label">Process Grade Questions</label></span>
+            Some standards offer additional techniques to adjust the predicted MTBF values based on available data.
+            Descriptions of some of these techniques follow.</p>
+          <ul>
+            <li>Laboratory and field data can be factored into the analyses in Telcordia, PRISM, and 217Plus.</li>
+            <li>Burn-in time can be used in Telcordia.</li>
+            <li>Process Grades factors are utilized within PRISM and 217 Plus to adjust the predicted MTBF based on
+              design, manufacturing, part quality, system management, cannot
+              duplicate (i.e., maintenance and tracking of errors), induced (i.e., outside failures such as static
+              discharge), wearout, growth, infant mortality, and environment.
+            </li>
+            <li>Predecessor data can be used in PRISM and 217Plus if there is data available from a very similar product
+              such as a previous generation.
+            </li>
+            <li>Cycling profiles can be set up in RDF2000 and IEC TR 62380 when conditions are not constant for the life
+              of a product.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Components Modeled</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>While a large number of components are modeled across all prediction standards, not all part types are
+            modeled in each standard. Some examples follow:</p>
+          <ul>
+            <li>PRISM does not have models for switching devices, relays, or connectors.</li>
+            <li>Optical modules are not covered in MIL-HDBK-217 or GJB/z 299B.</li>
+            <li>Many mechanical components, such as seals and springs, are covered only in NSWC-98/LE1.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Environments Supported</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>In every standard, the MTBF is directly impacted by the surroundings in which the device will be used. For
+            example, a product will have a lower MTBF if it is used in an airborne environment than if it were used in a
+            fixed ground environment because of the extra stress and vibration. Each standard has its own list of
+            supported environments. Telcordia has only five supported environments, but they are the five most used in
+            the telecom industry: Ground Fixed Controlled, Ground Fixed Uncontrolled, Ground Mobile, Airborne
+            Commercial, and Space. MIL-HDBK-217 offers all of these environments plus more choices useful in military
+            environments, such as Naval Sheltered for equipment inside submarines. PRISM and 217Plus provide the most
+            choices, with 37 environments that are a mix of commercial and military locations. It is important to check
+            that a standard has the environment for your product before choosing it for your MTBF prediction
+            analysis.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Target Industry</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Many standards were developed for a specific industry, and because of that, may be more aptly suited to
+            model the environments and/or part types found in that industry. However, it should be noted that all
+            standards are in use in a variety of industries. While MIL-HDBK-217 and 299B were developed for military
+            applications, they are often used in commercial applications. Telcordia, HRD5, RDF 2000, and IEC TR 62380
+            were developed specifically for the telecom industry but are also used to model products in many other
+            industries. PRISM and 217Plus have been designed from their inception to support both military and
+            commercial products.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Failure Rate Units</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The units for failure rate differ between standards. For example, MIL-HDBK-217 uses failures per million
+            hours (FPMH), whereas Telcordia uses failures in time (FITs), i.e., failures per billion hours. The
+            conversion factor between FPMH and FITs is 1,000. Another difference would be PRISM, which is expressed in
+            failures per million calendar hours rather than failures per million operating hours. Although the units for
+            failure rate differ between standards, MTBF values are most commonly expressed in hours.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3>Summary</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p><span class="image right"><img id="fig-4"
+                                            src="../images/cache_886001952.jpg"
+                                            alt="Windchill Prediction Parts Library">
+            <label for="fig-4" class="img-label">Windchill Prediction Parts Library</label>
+          </span>
+            Windchill Prediction can use any of the standards described in this article to assess the reliability of
+            your system design. Its superior integration enables you to mix calculation models within a single project,
+            allowing you to select the model most appropriate to each part or component in your design. With Windchill
+            Prediction, the additional analysis capabilities available in one model can typically be applied to any
+            model you use. For example, Telcordia calculation methods for taking field and test data into account in the
+            prediction can also be used with MIL-HDBK-217. Part 3 of this three-part article provides guidelines for
+            making a sound judgment decidingwhich reliability prediction standard to apply to a particular analysis.
+            Additional information about Windchill Prediction, supported models, and predictive modeling in general can
+            be found by visiting our <a href="../products/prediction.html">Windchill Prediction product page</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="returnbar" class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 align-center">
+          <a href="../articles.html" class="button">Back to articles index</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="row d-none d-sm-block">
+      <div class="col-12">
+        <p>
+          <a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                class="label">Email</span></a>
+          <span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+          <span class="hidden-small">&middot</span>
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p>
+          <span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+          <span>(724) 510-0100</span>
+          <span class="hidden-small">&middot</span>
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p>
+          <span class="icon solid alt fa-map"><span class="label">Address</span></span>
+          <span>Export, PA 15632</span>
+        </p>
+      </div>
+    </div>
+    <div class="d-sm-none">
+      <ul class="icons">
+        <li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+              class="label">Email</span></a></li>
+        <li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+        <li>&middot</li>
+        <li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span></li>
+        <li>(724) 510-0100</li>
+        <li>&middot</li>
+        <li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+        <li>Export, PA 15632</li>
+      </ul>
+    </div>
+
+    <ul class="copyright">
+      <li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+      <li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+      <script type="text/javascript">
+        // set the year to the current year
+        const el = document.getElementById("year");
+        el.innerText = `${new Date().getFullYear()}`;
+      </script>
+    </ul>
+  </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

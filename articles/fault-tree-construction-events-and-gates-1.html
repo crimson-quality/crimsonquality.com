@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Crimson Quality - Relex - PTC Windchill - Articles - Reliability Prediction Models Part 1</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+    </noscript>
+    <meta name="theme-color" content="#1c1d26"/>
+</head>
+<body class="is-preload landing">
+<div id="page-wrapper">
+    <!-- Header -->
+    <header id="header">
+        <a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo"/></a>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../products.html">Products</a>
+                    <ul>
+                        <li><a href="../products/prediction.html">Windchill Prediction</a></li>
+                        <li><a href="../products/fmea.html">Windchill FMEA</a></li>
+                        <li><a href="../products/fta.html">Windchill FTA</a></li>
+                        <li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+                        <li><a href="../products/rbd.html">Windchill RBD</a></li>
+                        <li><a href="../products/weibull.html">Windchill Weibull</a></li>
+                        <li><a href="../products/alt.html">Windchill ALT</a></li>
+                        <li><a href="../products/markov.html">Windchill Markov</a></li>
+                        <li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+                        <li><a href="../products/lcc.html">Windchill LCC</a></li>
+                    </ul>
+                </li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../training.html">Training</a></li>
+                <li><a class="active" href="../articles.html">Articles</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../demo.html" class="button primary">Download Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="product-banner" class="article">
+        <div class="content">
+            <header>
+                <h2>Fault Tree Construction: Events and Gates - Part I</h2>
+                <h5>Note: This is the first of a three-part article. It describes the events and static gates most
+                    commonly used in fault tree construction. <a
+                            href="./fault-tree-construction-events-and-gates-2.html">
+                        Part II</a> explores additional static gates that use NOT
+                    logic to indicate how the lack of an event's occurrence can cause the top event to occur.
+                    Part III
+                    demonstrates how dynamic gates extend fault tree analysis even further by considering the order in
+                    which input events occur.</h5>
+            </header>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main" class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="alt">Part I: Commonly Used Events and Static Gates</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Introduction</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Fault tree analysis (FTA) is a procedure for determining the various combinations of hardware
+                        and software failures and human errors that can result in the occurrence of a specified
+                        undesired event at the system level. The undesired event to evaluate is referred to as the top
+                        event. It is generally some type of failure or malfunction. All of the hardware and software
+                        failures and humans errors that can lead to the occurrence of the top event are referred to as
+                        events.</p>
+                    <p>FTA begins with clearly defining the top event and then determining the various combinations of
+                        events that can lead to its occurrence. The successive levels in the fault tree depict how the
+                        propagation of lower-level events causes the top event to occur. Logic operators known as gates
+                        determine how events are generated. In the construction of a fault tree, various symbols are
+                        used to represent events and gates.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Events</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>This section describes the types of events that can be inserted in a fault tree. It also shows
+                        the symbols that Windchill FTA uses to represent each event.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Basic Event</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090063.JPG" alt=""></span>A
+                        <strong>basic event</strong> represents the lowest level, or terminating event, in a fault tree. A <strong>basic
+                            event</strong>
+                        has no inputs. It simply represents the occurrence of an event in the system being analyzed. A
+                        basic event is either a component-level event that is not further resolved or an external event.
+                        Basic events can include hardware or software failures, human errors, and system failures. Basic
+                        events are the most commonly used primary events in FTA. Primary events are lower-level
+                        events.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>CD player can be powered by batteries or electrical power. The CD player fails to operate if
+                        the batteries are dead AND no electrical power source is available. Thus, an AND gate, which
+                        is described later in this article, is inserted in the fault tree along with two basic events:
+                        No Battery and No Electric.</p>
+                </div>
+            </div>
+            <div class="col-12 align-center">
+                <span class="image"><img src="../images/cache_891090072.JPG" alt=""</span>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Undeveloped Event</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090056.JPG" alt=""></span>An <strong>undeveloped
+                        event</strong> is used if further resolution of that event is not necessary for proper
+                        evaluation of the fault tree or if the information necessary for developing this event is not
+                        currently available. While an <strong>undeveloped event</strong> is similar to a basic event, it is represented
+                        by a different symbol to signify that it is possible to break this event down into associated
+                        gates and events, even though this has not been done for this particular analysis.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>A vehicle will not start if there is no fuel OR if there is some other mechanical problem. Thus,
+                        an OR gate is inserted in the fault tree along with a basic event (No Gas) and an undeveloped
+                        event (Mech Problem). The undeveloped event indicates that other mechanical problems are not
+                        within the scope of the analysis. The OR gate is fully described later in this article.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891091635.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Conditional Event</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090083.JPG" alt=""></span>A <strong>conditional
+                        event</strong> is used along with an Inhibit gate, which is described later
+                        in this article.
+                        In a fault tree with an Inhibit gate, the output occurs only when the input events occur AND a
+                        conditional event is satisfied.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>From the fire triangle, we know that there will be fire when fuel and a heat source are present,
+                        given the presence of oxygen. The need for the presence of oxygen is the conditional event in
+                        the following fault tree. When you insert an Inhibit gate in a Windchill fault tree, Windchill
+                        automatically inserts the conditional event so that you can specify the condition that must be
+                        satisfied. The main purpose is to visually emphasize the presence of the condition, which is
+                        generally either a very rare or very common event.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891090087.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>House Event</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090090.JPG" alt=""></span>A <strong>house event</strong> is
+                        a special type of event employed for specific uses within a fault tree analysis. Common uses for
+                        house events are:</p>
+                    <ul style="margin-left: 6%">
+                        <li>To represent an event that is normally expected to occur.</li>
+                        <li>To disable or enable parts of a fault tree to make them functional or non-functional. To
+                            represent trigger events, switching events, and external events.
+                        </li>
+                    </ul>
+                    <p>A <strong>house event</strong> can be turned on or off to specify the conditions present under a specific
+                        scenario. When a house event is turned on (TRUE), that event is presumed to have occurred and
+                        the probability of that event is set to 1. When a house event is turned off (FALSE), it is
+                        presumed not to have occurred, and the probability is set to 0.</p>
+                    <p><strong>House events</strong> are commonly used to make parts of a fault tree functional or non-functional. This
+                        can help you to more effectively analyze large multi-level fault trees by allowing you to "turn
+                        off" portions of a fault tree to evaluate varying scenarios.</p>
+                    <p><strong>House events</strong> can also be used to model "trigger" events. When a trigger event occurs, the
+                        associated logic path is considered. When the trigger event does not occur, the associated logic
+                        path is ignored.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>A compressor tank will fail when electrical power is not available. Because electrical power is
+                        presumed to be present, the even "Power On" is inserted as a house event. The house event is
+                        turned on to represent that the event has occurred.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891090093.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Basic Static Gates</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Gates are used to represent the failure logic paths between the various fault tree levels. A
+                        static gate indicates a gate where the order of the inputs does not matter. This means that the
+                        underlying occurrence of events is not sequence-dependent. Only the occurrence of the input
+                        event is considered, not its temporal relation (order of events in time) to the occurrence of
+                        other events.</p>
+                    <p>This section describes the static gates that are most commonly used to represent the failure
+                        logic between successive levels of a fault tree. It also shows the symbols that Windchill Fault
+                        Tree uses to represent these gates. For all static gates, the output can be the top event or any
+                        intermediate event. The input events can be basic events, intermediate events (outputs of other
+                        gates), or combinations of both.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>AND Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090097.JPG" alt=""></span>The <strong>AND
+                        gate</strong> is
+                        used to indicate that the output occurs if and only if all the input events occur. There must be
+                        at least two input events to an AND gate.</p>
+                    <p><strong>Summary of Logic:</strong> All events must be TRUE for the output to be TRUE.</p>
+                    <p>A truth table for the <strong>AND gate</strong> follows. The Boolean equation for an <strong>AND
+                        gate</strong> is T = A * B</p>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;margin-left: auto;margin-right: auto " class="col-4">
+                    <div class="table-wrapper">
+                        <table id="table-1">
+                            <thead>
+                            <tr>
+                                <th><strong>A</strong></th>
+                                <th><strong>B</strong></th>
+                                <th><strong>Output</strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>A CD player can be powered by batteries or electrical power. The CD player fails to operate if
+                        the batteries are dead AND no electrical power sources is available.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891090100.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>OR Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090104.JPG" alt=""></span>The <strong>OR
+                        gate</strong> is
+                        used to indicate that the output occurs if and only if at least one of the input
+                        events occur. There must be at least two inputs to an <strong>OR gate</strong>.</p>
+                    <p><strong>Summary of Logic</strong>: If at least one event is TRUE, the output is TRUE. If all
+                        events are FALSE, the
+                        output is FALSE.</p>
+                    <p>A truth table for the <strong>OR gate</strong> follows. The Boolean equation for an <strong>OR
+                        gate</strong> is T
+                        = A + B.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;margin-left: auto;margin-right: auto " class="col-4">
+                    <div class="table-wrapper">
+                        <table id="table-1">
+                            <thead>
+                            <tr>
+                                <th><strong>A</strong></th>
+                                <th><strong>B</strong></th>
+                                <th><strong>Output</strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>A vehicle will not start if there is no fuel OR there is some other mechanical problem. </p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891091635.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Voting Gate (m/n)</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090110.JPG" alt=""></span>The <strong>Voting
+                        (m/n)
+                        gate</strong> is used to indicate that the output occurs if and only if at least m out of the n
+                        input
+                        events occurs. The input events do not need to occur at the same point in time but should be
+                        present at the same time. The output occurs when at least m input events occur. When m = 1, the
+                        Voting gate behaves like an OR Gate.</p>
+                    <p><strong>Summary of Logic</strong>: If m = 2 and n = 3, two input events must be TRUE for the
+                        output to be TRUE. If zero or one input events are TRUE, the output is FALSE.</p>
+                    <p>A truth table for a Voting (2/3) gate follows. The Boolean equation for a three-input Voting gate
+                        is T = (A * B) + (B * C) + (C * A).</p>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;margin-left: auto;margin-right: auto " class="col-4">
+                    <div class="table-wrapper">
+                        <table id="table-1">
+                            <thead>
+                            <tr>
+                                <th><strong>A</strong></th>
+                                <th><strong>B</strong></th>
+                                <th><strong>C</strong></th>
+                                <th><strong>Output</strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Power is supplied by three generators. When two generators are working, adequate power is
+                        supplied. When only one generator is working, there is not enough power.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891090120.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Inhibit Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090110.JPG" alt=""></span>The <strong>Inhibit
+                        Gate</strong>
+                        is used to indicate that the output occurs when the input events (I1 and I2) occur and the input
+                        condition (C) is satisfied. An <strong>Inhibit Gate</strong> is very much like an AND gate with
+                        a condition. When
+                        you insert an <strong>Inhibit Gate</strong> in a Windchill fault tree, a conditional event is
+                        automatically
+                        inserted along with it so that the input condition can be specified.</p>
+                    <p><strong>Summary of Logic</strong>: If one input event is FALSE, the output is FALSE. If all input
+                        events and the input condition are TRUE, the output is TRUE.</p>
+                    <p>A truth table for an <strong>Inhibit Gate</strong> follows. The Boolean equation for an <strong>Inhibit
+                        Gate</strong> T =
+                        (I1,I2) * C.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;margin-left: auto;margin-right: auto " class="col-4">
+                    <div class="table-wrapper">
+                        <table id="table-1">
+                            <thead>
+                            <tr>
+                                <th><strong>I1</strong></th>
+                                <th><strong>I2</strong></th>
+                                <th><strong>C</strong></th>
+                                <th><strong>Output</strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>From the fire triangle, we know that there will be fire when fuel and a heat source are present,
+                        given the presence of oxygen. The two basic events and the conditional event are the three legs
+                        of the triangle. All three events must be TRUE for the top event (Fire) to occur.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891090129.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Transfer Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090135.JPG" alt=""></span>The
+                        <strong>Transfer Gate</strong> is used to link logic in separate areas of a fault tree. When a
+                        <strong>Transfer Gate</strong> is
+                        selected for insertion, a <strong>Transfer In Gate</strong> is inserted in the fault tree. The
+                        Transfer In gate
+                        is then linked to a Transfer Out gate, which represents the top gate of another fault tree.</p>
+                    <p>There are two primary uses of <strong>Transfer Gates</strong>.</p>
+                    <ul style="margin-left: 6%">
+                        <li>An entire fault tree may not fit on a single sheet of paper. You can use Transfer gates to
+                            organize various portions of a large fault tree on separate sheets of paper.
+                        </li>
+                        <li>The same fault tree logic may be used in different places in a fault tree. You can use
+                            <strong>Transfer Gates</strong> to define this logic once and use it wherever necessary.
+                            Therefore, repeated
+                            gates can be created using <strong>Transfer Gates</strong>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Remarks Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090138.JPG" alt=""></span>The <strong>Remarks
+                        Gate</strong>
+                        is used for the entry of comments. A <strong>Remarks Gate</strong> has no calculation data
+                        associated with it and
+                        therefore has no effect on calculations. However, the tree branch may continue after a Remarks
+                        gate. There can be only one input to a <strong>Remarks Gate</strong>.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>The fault tree below is the same as the example for the OR gate, with a Remarks gate added to
+                        explain the other mechanical problems that could contribute to the car not starting.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891090141.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Pass-Through Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891090145.JPG" alt=""></span>The <strong>Pass-Through
+                        Gate</strong> is used for visually aligning the events and gates in a fault tree. A Pass-Through
+                        gate
+                        extends the vertical connector down through an additional fault tree level.</p>
+                    <p>The <strong>Pass-Through Gate</strong> is used for visually aligning the events and gates in a
+                        fault tree. A
+                        Pass-Through gate extends the vertical connector down through an additional fault tree
+                        level.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>The fault tree below is the same as the one for the Remarks gate example except a Pass-Through
+                        gate has been inserted to extend the connector to the basic event from the second level to the
+                        lowest level.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891090151.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Conclusion</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>This article describes the events and static gates most commonly used in fault tree construction.
+                        There are additional static gates that can be used to indicate how the lack of an event's
+                        occurrence can cause the top event to occur. These gates, sometimes referred to as non-coherent
+                        gates, are described in <a
+                                href="./fault-tree-construction-events-and-gates-2.html">Part
+                            II</a> of this series. There are also dynamic gates that can be used to
+                        consider the order in which input events occur. These gates are described in <a
+                                href="https://www.crimsonquality.com/articles/fault-tree-construction-events-and-gates-part-iii/">
+                            Part III </a> of the
+                        series. For additional information about fault trees and the many benefits provided by
+                        Windchill
+                        Quality Solutions FTA, <a href="../products/fta.html">click here.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="returnbar" class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 align-center">
+                <a href="../articles.html" class="button">Back to articles index</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="row d-none d-sm-block">
+        <div class="col-12">
+            <p>
+                <a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                        class="label">Email</span></a>
+                <span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+                <span class="hidden-small">&middot</span>
+            </p>
+        </div>
+
+        <div class="col-12">
+            <p>
+                <span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+                <span>(724) 510-0100</span>
+                <span class="hidden-small">&middot</span>
+            </p>
+        </div>
+
+        <div class="col-12">
+            <p>
+                <span class="icon solid alt fa-map"><span class="label">Address</span></span>
+                <span>Export, PA 15632</span>
+            </p>
+        </div>
+    </div>
+    <div class="d-sm-none">
+        <ul class="icons">
+            <li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                    class="label">Email</span></a></li>
+            <li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+            <li>&middot</li>
+            <li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span></li>
+            <li>(724) 510-0100</li>
+            <li>&middot</li>
+            <li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+            <li>Export, PA 15632</li>
+        </ul>
+    </div>
+
+    <ul class="copyright">
+        <li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+        <li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+        <script type="text/javascript">
+            // set the year to the current year
+            const el = document.getElementById("year");
+            el.innerText = `${new Date().getFullYear()}`;
+        </script>
+    </ul>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

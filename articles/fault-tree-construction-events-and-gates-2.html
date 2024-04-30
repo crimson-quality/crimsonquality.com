@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Crimson Quality - Relex - PTC Windchill - Articles - Reliability Prediction Models Part 1</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+    </noscript>
+    <meta name="theme-color" content="#1c1d26"/>
+</head>
+<body class="is-preload landing">
+<div id="page-wrapper">
+    <!-- Header -->
+    <header id="header">
+        <a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo"/></a>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../products.html">Products</a>
+                    <ul>
+                        <li><a href="../products/prediction.html">Windchill Prediction</a></li>
+                        <li><a href="../products/fmea.html">Windchill FMEA</a></li>
+                        <li><a href="../products/fta.html">Windchill FTA</a></li>
+                        <li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+                        <li><a href="../products/rbd.html">Windchill RBD</a></li>
+                        <li><a href="../products/weibull.html">Windchill Weibull</a></li>
+                        <li><a href="../products/alt.html">Windchill ALT</a></li>
+                        <li><a href="../products/markov.html">Windchill Markov</a></li>
+                        <li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+                        <li><a href="../products/lcc.html">Windchill LCC</a></li>
+                    </ul>
+                </li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../training.html">Training</a></li>
+                <li><a class="active" href="../articles.html">Articles</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../demo.html" class="button primary">Download Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="product-banner" class="article">
+        <div class="content">
+            <header>
+                <h2>Fault Tree Construction: Events and Gates - Part II</h2>
+                <h5>Note: This is the second of a three-part series. It explores static gates that use NOT logic to
+                    indicate how the lack of an event's occurrence can cause the top event to occur. <a
+                            href="./fault-tree-construction-events-and-gates-1.html">Part
+                        I</a> describes
+                    the events and static gates most commonly used in fault tree construction. Part III demonstrates how
+                    dynamic gates extend fault tree analysis even further by considering the order in which input events
+                    occur.</h5>
+            </header>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main" class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="alt">Part II: NOT Logic Gates</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Introduction</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>NOT logic indicates how the lack of an event's occurrence can cause the top event in a fault tree
+                        to occur. There are several static gates that use NOT logic. They are the NOT, NOR, NAND, and
+                        XOR gates. Because the presence of a NOT logic gate in a fault tree typically results in a
+                        non-coherent rather than coherent fault tree, NOT logic gates are sometimes referred to as
+                        non-coherent gates.</p>
+                    <p>In a coherent fault tree, each component in the system is relevant, and the structure function is
+                        monotonically increasing. A fault tree that contains only AND gates, OR gates, and/or
+                        independent events is always coherent. Whenever a NOT logic gate is introduced into a fault
+                        tree, it is likely to become non-coherent. While the introduction of disjoint and dependent
+                        events is also likely to make a fault tree non-coherent, this article focuses on NOT logic
+                        gates.</p>
+                    <p>A fault tree is non-coherent when both component failures and successes (positive and negative
+                        events) can cause the top event to occur. For example, system failure might occur due to the
+                        recovery of a failed component. Alternatively, during system failure, the failure of an
+                        additional component may bring the system to a good state. If the NOT logic can be eliminated
+                        from the fault tree, the fault tree is coherent. If the NOT logic cannot be eliminated from the
+                        fault tree, the fault tree is non-coherent.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>NOT Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image left"><img src="../images/cache_891097500.JPG" alt=""></span>The <strong>NOT
+                        gate</strong> is used to indicate that the output occurs only when the input
+                        event does not occur.
+                        There is only one input to a <strong>NOT gate</strong>. The output is always opposite of the
+                        input gate or
+                        event.</p>
+                    <p><strong>Summary of Logic</strong>: The output is the opposite of the input gate or event.</p>
+                    <p>A truth table for a <strong>NOT gate</strong> The Boolean equation for a <strong>NOT
+                        gate</strong> is T = ~A.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;margin-left: auto;margin-right: auto " class="col-4">
+                    <div class="table-wrapper">
+                        <table id="table-1">
+                            <thead>
+                            <tr>
+                                <th><strong>A</strong></th>
+                                <th><strong>Output</strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>A traffic light system is used at the crossing of two mono-directional roads. Assume that the
+                        light acts properly and is RED for road 1 and GREEN for road 2. The figure below depicts the
+                        scenario.</p>
+                </div>
+            </div>
+            <div class="col-12 align-center">
+                <span class="image"><img src="../images/cache_891099931.jpg" alt=""</span>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Given this scenario, the following events can occur:</p>
+                    <ul style="margin-left: 6%">
+                        <li>A = Car A fails to stop</li>
+                        <li>B = Car B fails to stop</li>
+                        <li>C = Car C fails to continue</li>
+                    </ul>
+                    <p>An accident can occur in two ways:</p>
+                    <ul style="margin-left: 6%">
+                        <li>Car A acts properly and stops (~A) AND Car B fails to stop (B).</li>
+                        <li>Car A fails to stop (A) AND Car C continues to move towards area 2 into crossing (~C).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 align-center">
+                <span class="image"><img src="../images/cache_891100022.JPG" alt=""</span>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><em>Note: In Windchill Quality Solutions FTA, repeated events are visually noted by displaying
+                        them
+                        in a blue/green color. Repeated events are created when you copy and paste an event from one
+                        part of the fault tree to another.</em></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>NOR Gatet</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891097500.JPG" alt=""></span>The <strong>NOR
+                        gate</strong>
+                        functions like a combination of an OR gate and a NOT Gate. The <strong>NOR gate</strong> is used
+                        to indicate that
+                        the output occurs when all of the input events are absent.</p>
+                    <p>The output of a <strong>NOR gate</strong> can be the top event or an intermediate event. The
+                        input events can be
+                        basic events, intermediate events, or combinations of both.</p>
+                    <p><strong>Summary of Logic</strong>: If there is at least one TRUE input event, the output is
+                        FALSE.</p>
+                    <p>A truth table for a <strong>NOR gate</strong> follows. The Boolean equation for a <strong>NOR
+                        gate</strong> is T = ~(A + B) = (~A)
+                        * (~B).></p>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;margin-left: auto;margin-right: auto " class="col-4">
+                    <div class="table-wrapper">
+                        <table id="table-1">
+                            <thead>
+                            <tr>
+                                <th><strong>A</strong></th>
+                                <th><strong>B</strong></th>
+                                <th>Output</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Generator 1 and Generator 2 must both operate for there to be adequate power for the system. If
+                        either one of these generators fail, there is not enough power.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891100019.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>NAND Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891097695.JPG" alt=""></span>The <strong>NAND
+                        gate</strong>
+                        functions like a combination of an AND gate and a NOT gate. The <strong>NAND gate</strong> is
+                        used to indicate
+                        that the output occurs when at least one of the input events is absent.</p>
+                    <p><strong>Summary of Logic</strong>: If there is at least one FALSE event, the output is TRUE.</p>
+                    <p>A truth table for a <strong>NAND gate</strong> follows. The Boolean equation for a <strong>NAND
+                        gate</strong> is T = ~(A * B) =
+                        (~A) + (~B).</p>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;margin-left: auto;margin-right: auto " class="col-4">
+                    <div class="table-wrapper">
+                        <table id="table-1">
+                            <thead>
+                            <tr>
+                                <th><strong>A</strong></th>
+                                <th><strong>B</strong></th>
+                                <th>Output</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>When at least one generator is operating, there is adequate power for the system. If both of
+                        these generators fail, there is no power.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891100013.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>XOR Gate</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p><span class="image right"><img src="../images/cache_891097698.JPG" alt=""></span>The XOR gate,
+                        also known as the Exclusive OR gate, is used to indicate that the output occurs if and only if
+                        one of the two input events occurs and the other input event does not occur. An XOR gate can
+                        have only two inputs.</p>
+                    <p><strong>Summary of Logic</strong>: If one and only one input event is TRUE, the output is TRUE.
+                        If more than one
+                        input event is TRUE, the output is FALSE.</p>
+                    <p>A truth table for an <strong>XOR gate</strong> follows. The Boolean equation for an <strong>XOR
+                        gate</strong> is T = (A * [~B]) =
+                        ([~A] * B).</p>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center;margin-left: auto;margin-right: auto " class="col-4">
+                    <div class="table-wrapper">
+                        <table id="table-1">
+                            <thead>
+                            <tr>
+                                <th><strong>A</strong></th>
+                                <th><strong>B</strong></th>
+                                <th>Output</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>True</td>
+                                <td>True</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>True</td>
+                                <td>False</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>True</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>False</td>
+                                <td>False</td>
+                                <td>False</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Example</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>There is a partial loss of power resulting from the failure of either Power Supply A or Power
+                        Supply B.</p>
+                    <div class="col-12 align-center">
+                        <span class="image"><img src="../images/cache_891100010.JPG" alt=""</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Conclusion</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>NOT logic indicates how the lack of an event's occurrence can cause the top event in a fault tree
+                        to occur. The static gates that use NOT logic are the NOT, NOR, NAND, and XOR gates. The
+                        presence of a NOT logic gate in a fault tree typically results in a non-coherent rather than
+                        coherent fault tree.</p>
+                    <p>As you can see from this series, there may be more than one way to model a system by employing
+                        different gate types. This is advantageous for the analyst because there is flexibility to model
+                        a system in an understandable manner, as well as the ability to more accurately portray the
+                        system events.</p>
+                    <p>Part III of our series focuses on dynamic gates. Part I of our series covers events and common
+                        gates types. For additional information about fault trees and the many benefits provided by
+                        Windchill Quality Solutions Fault Tree, <a href="../products/fta.html">click
+                            here</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="returnbar" class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 align-center">
+                <a href="../articles.html" class="button">Back to articles index</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="row d-none d-sm-block">
+        <div class="col-12">
+            <p>
+                <a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                        class="label">Email</span></a>
+                <span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+                <span class="hidden-small">&middot</span>
+            </p>
+        </div>
+
+        <div class="col-12">
+            <p>
+                <span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+                <span>(724) 510-0100</span>
+                <span class="hidden-small">&middot</span>
+            </p>
+        </div>
+
+        <div class="col-12">
+            <p>
+                <span class="icon solid alt fa-map"><span class="label">Address</span></span>
+                <span>Export, PA 15632</span>
+            </p>
+        </div>
+    </div>
+    <div class="d-sm-none">
+        <ul class="icons">
+            <li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                    class="label">Email</span></a></li>
+            <li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+            <li>&middot</li>
+            <li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span></li>
+            <li>(724) 510-0100</li>
+            <li>&middot</li>
+            <li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+            <li>Export, PA 15632</li>
+        </ul>
+    </div>
+
+    <ul class="copyright">
+        <li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+        <li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+        <script type="text/javascript">
+            // set the year to the current year
+            const el = document.getElementById("year");
+            el.innerText = `${new Date().getFullYear()}`;
+        </script>
+    </ul>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crimson Quality - Relex - PTC Windchill - Articles - Reliability Prediction Models Part 1</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+  <noscript>
+    <link rel="stylesheet" href="../assets/css/noscript.css"/>
+  </noscript>
+  <meta name="theme-color" content="#1c1d26"/>
+</head>
+<body class="is-preload landing">
+<div id="page-wrapper">
+  <!-- Header -->
+  <header id="header">
+    <a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo" /></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../products.html">Products</a>
+          <ul>
+            <li><a href="../products/prediction.html">Windchill Prediction</a></li>
+            <li><a href="../products/fmea.html">Windchill FMEA</a></li>
+            <li><a href="../products/fta.html">Windchill FTA</a></li>
+            <li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+            <li><a href="../products/rbd.html">Windchill RBD</a></li>
+            <li><a href="../products/weibull.html">Windchill Weibull</a></li>
+            <li><a href="../products/alt.html">Windchill ALT</a></li>
+            <li><a href="../products/markov.html">Windchill Markov</a></li>
+            <li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+            <li><a href="../products/lcc.html">Windchill LCC</a></li>
+          </ul>
+        </li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../training.html">Training</a></li>
+        <li><a class="active" href="../articles.html">Articles</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+        <li><a href="../demo.html" class="button primary">Download Demo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="product-banner" class="article">
+    <div class="content">
+      <header>
+        <h2>Reliability Prediction Models</h2>
+        <p>Note: This is the first part of a three-part article. It identifies the major factors in reliability
+          prediction models that contribute to predicting component failure. Part 2 will explore the various reliability
+          prediction standards that are available, including MIL-HDBK-217, Telcordia, 217Plus, PRISM, IEC62380 and
+          FIDES, among others. Part 3 will provide guidelines for making a sound judgment when deciding which standard
+          to apply to a particular analysis.</p>
+        <h5>Part 1 of 3</h5>
+      </header>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <div id="main" class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Introduction</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>
+            <span class="image right"><img id="fig-1" src="../images/cache_884736825.jpg" alt="MTBF vs Temperature">
+              <label class="img-label" for="fig-1">Figure 1: MTBF vs Temperature</label>
+            </span>
+            Reliability prediction stands at the center of many reliability programs across government and industry.
+            The basic principle of reliability prediction is to define a rate of failure for all key components in a
+            system and then add them together to obtain an overall system failure rate. This process explicitly
+            considers all components to be in series, which means that if one component fails, the entire system goes
+            down. The result gives a conservative estimate of when a system will most likely fail.
+          </p>
+          <p>Over the past few decades, several standards have been developed to assist in conducting this type of
+            analysis. The standards define models for different component types based on test and/or field data. With
+            few exceptions, the models assume a failure rate that is constant with time, addressing the useful life of a
+            component where failures are regarded as random.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3>Major Factors Affecting Reliability Predictions</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The major factors in reliability prediction models that contribute to predicting component failure consist
+            of:</p>
+          <ul>
+            <li>the type of prediction method (parts count versus parts stress)</li>
+            <li>the types of parts in the system</li>
+            <li>the quality of the parts</li>
+            <li>the environment in which the system operates (including temperature)</li>
+            <li>the availability of life data</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Parts Count Versus Parts Stress</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The first decision you must make before choosing a reliability prediction model is whether to use a parts
+            count prediction or a parts stress prediction. The parts count prediction is generally used for the early
+            design stage of a project when parts and part parameters have not been exactly identified. It uses generic
+            failure rates for various part types given an operating environment and temperature, multiplies them by a
+            quality factor, and then adds them up to obtain a system failure rate. This methodology is specifically
+            defined in MIL-HDBK-217, Telcordia, and GJB/z 299B.</p>
+          <p>Parts stress prediction is normally used later in the development stage when most of the components and
+            operating conditions have been identified. In a parts stress prediction, temperature and electrical stress
+            become important factors in predicting the part failure rate. Temperature can be set at the system level,
+            the
+            assembly level, and the component level. A junction temperature rise per component may also be considered,
+            depending on the depth of the parts stress prediction. The electrical stress usually assumes the form of a
+            ratio of operating value to rated value. For instance, the defining stress factor for capacitors is voltage.
+            Consequently, operating voltage and rated voltage are used in the failure calculation model. These factors
+            are
+            generally consistent across the different reliability prediction standards.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Part Types</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Part type identification in any prediction model is the major factor affecting failure rates as well as the
+            model inputs that must be considered. As an example, Table 1 compares the device parameters required for
+            microprocessor and silicon field effects transistor parts stress models in MIL-HDBK-217 and Telcordia. Each
+            of
+            these parameters has a dramatic effect on the failure rate prediction of the device. It is also very
+            important
+            to consider the different part types supported by a particular standard when deciding which one to choose.
+            For
+            example, MIL-HDBK-217 includes a model for laser diodes and Telcordia includes a model for batteries, but
+            the
+            reverse is not true.</p>
+          <div class="table-wrapper">
+            <table id="table-1">
+              <thead>
+              <tr>
+                <th>Model</th>
+                <th>MIL-HDBK-217</th>
+                <th>Telcordia</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Microprocessor</td>
+                <td>
+                  <ul>
+                    <li>Technology type</li>
+                    <li>Number of gates</li>
+                    <li>Pins</li>
+                    <li>Package type</li>
+                    <li>Years in production</li>
+                    <li>Operating power</li>
+                    <li>Thermal resistance</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Technology type</li>
+                    <li>Number of gates</li>
+                    <li>Package type</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Si FET</td>
+                <td>
+                  <ul>
+                    <li>One or two sided</li>
+                    <li>Application</li>
+                    <li>Power rating</li>
+                    <li>Type</li>
+                    <li>Thermal resistance</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Application</li>
+                    <li>Package type</li>
+                    <li>Power rating</li>
+                  </ul>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <label for="table-1">Table 1. Comparison of device inputs for models of two part types</label>
+          </div>
+          <p>
+            <span class="image right">
+              <img id="fig-2" src="../images/cache_884736961.jpg"
+                   alt="Sample MIL-HDBK-217 equation for an integrated circuit">
+              <label for="fig-2"
+                     class="img-label">Figure 2. Sample MIL-HDBK-217 equation for an integrated circuit</label>
+            </span>
+            The values for these parameters establish Pi (π) factors, which are the variables used in the failure rate
+            equation for the part type. The figure below shows a MIL-HDBK-217 equation for an integrated circuit. The
+            data for the variables in this equation is located in data tables in different sections of MIL-HDBK-217,
+            <i>Military Reliability Prediction of Electronic Equipment.</i>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Quality Level</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Part quality level is a measure of a manufacturer's production and test procedures and the quality controls
+            in place. Quality level scales vary significantly from standard to standard and from part type to part type
+            for some standards. For example, Telcordia defines a single quality scale for all part types while
+            MIL-HDBK-217 has different scales for different part types. When assessing which model to use, you may want
+            to consider which quality rating you use in your company and see which model closely matches it.</p>
+        </div>
+        <div class="col-12 align-center">
+          <span class="image"><img id="fig-3" src="../images/cache_884737242.png" alt="MTBF vs Environment">
+          <label class="img-label" for="fig-3">Figure 3. MTBF vs Environment</label></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Availability of Life Data</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Sometimes, you may have data obtained from actual fielded units or laboratory tested units. This
+            information can be very useful in adjusting the predicted failure rates to more accurately reflect what has
+            been experienced. Some models specifically support this feature, including Telcordia and PRISM. Though this
+            may limit your selection if you are doing prediction calculations manually, software prediction packages
+            such as Windchill Prediction extend this capability to all prediction models.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3>Summary</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>There are several major factors in reliability prediction models that contribute to predicting component
+            failure. These include the type of prediction (parts count versus parts stress), the types of parts in the
+            system, the quality of parts, the environment in which the system operates, and the availability of life
+            data. Part 2 of this three-part article will explore, in more detail, the various standards that are
+            available, including MIL-HDBK-217, Telcordia, 217Plus, PRISM, IEC62380 and FIDES. Additional information
+            about Windchill Prediction, supported models, and predictive modeling in general can be found by visiting
+            our <a href="../products/prediction.html">Windchill Prediction product page</a>.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="tiny">Sources:</p>
+          <p class="tiny">"Reliability Prediction Models: Use and Evaluation", Reliability eFlash, 2009</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="returnbar" class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 align-center">
+          <a href="../articles.html" class="button">Back to articles index</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="row d-none d-sm-block">
+      <div class="col-12">
+        <p>
+          <a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                class="label">Email</span></a>
+          <span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+          <span class="hidden-small">&middot</span>
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p>
+          <span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+          <span>(724) 510-0100</span>
+          <span class="hidden-small">&middot</span>
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p>
+          <span class="icon solid alt fa-map"><span class="label">Address</span></span>
+          <span>Export, PA 15632</span>
+        </p>
+      </div>
+    </div>
+    <div class="d-sm-none">
+      <ul class="icons">
+        <li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+              class="label">Email</span></a></li>
+        <li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+        <li>&middot</li>
+        <li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span></li>
+        <li>(724) 510-0100</li>
+        <li>&middot</li>
+        <li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+        <li>Export, PA 15632</li>
+      </ul>
+    </div>
+
+    <ul class="copyright">
+      <li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+      <li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+      <script type="text/javascript">
+        // set the year to the current year
+        const el = document.getElementById("year");
+        el.innerText = `${new Date().getFullYear()}`;
+      </script>
+    </ul>
+  </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

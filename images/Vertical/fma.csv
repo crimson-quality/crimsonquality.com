@@ -1,0 +1,3 @@
+﻿"Item","Description","ID","Product Requirements","Process Requirements","SC","Potential Failure Mode","Potential Effect(s)","Sev","Potential Cause(s)","Current Controls Prevention","Occ","Current Controls Detection","Det","Risk Level","RPN","Recommended Action(s)","Responsibility","Target Completion Date","Action(s) Taken","Sev Res","Occ Res","Det Res","RPN Results","RPN <100","Controls"
+"06","ensamble de end cap","07","end cap","accesorios","Critial","partes faltantes","","6","","","8","","6","High","288","","","","","","","","0","False","2 FMEA Control Plans"
+"06","ensamble de end cap","07","end cap","accesorios","Critial","partes repetidas","","7","","","10","","1","High","70","","","","","","","","0","True","0 FMEA Control Plans"

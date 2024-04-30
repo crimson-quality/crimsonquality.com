@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Crimson Quality - Relex - PTC Windchill - Articles - Automating BOM Entry in Windchill Prediction</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+    </noscript>
+    <meta name="theme-color" content="#1c1d26"/>
+</head>
+
+<body class="is-preload landing">
+<div id="page-wrapper">
+    <!-- Header -->
+    <header id="header">
+        <a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo"/></a>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../products.html">Products</a>
+                    <ul>
+                        <li><a href="../products/prediction.html">Windchill Prediction</a></li>
+                        <li><a href="../products/fmea.html">Windchill FMEA</a></li>
+                        <li><a href="../products/fta.html">Windchill FTA</a></li>
+                        <li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+                        <li><a href="../products/rbd.html">Windchill RBD</a></li>
+                        <li><a href="../products/weibull.html">Windchill Weibull</a></li>
+                        <li><a href="../products/alt.html">Windchill ALT</a></li>
+                        <li><a href="../products/markov.html">Windchill Markov</a></li>
+                        <li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+                        <li><a href="../products/lcc.html">Windchill LCC</a></li>
+                    </ul>
+                </li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../training.html">Training</a></li>
+                <li><a class="active" href="../articles.html">Articles</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../demo.html" class="button primary">Download Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="product-banner" class="article">
+        <div class="content">
+            <header class="minor">
+                <h2>MTTF Versus MTBF</h2>
+                <h5>Theoretical Definitions and Alternative Uses for MTBF</h5>
+            </header>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main" class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Question</h2>
+                    <p><span class="image right"><img src="../images/cache_888733762.png" alt=""></span>According to
+                        some sources, MTBF is applicable only when failure times follow exponential
+                        distributions. According to other sources, MTBF is applicable only for repairable systems.
+                        You've probably also heard that MTBF is nothing more than MTTF. What do MTTF and MTBF really
+                        mean? Are there differences between these terms?</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>The Short Answer</h2>
+                    <p>MTBF (mean time between failures) is the expected time between two successive failures of a
+                        system. Therefore, MTBF is a key reliability metric for systems that can be repaired or
+                        restored. MTTF (mean time to failure) is the expected time to failure of a system.
+                        Non-repairable systems can fail only once. Therefore, for a non-repairable system, MTTF is
+                        equivalent to the mean of its failure time distribution. Repairable systems can fail several
+                        times. In general, it takes more time for the first failure to occur than it does for subsequent
+                        failures to occur. Therefore, MTTF for a repairable system can represent one of two things: (1)
+                        the mean time to first failure (MTTFF) or (2) the mean uptime (MUT) within a failure-repair
+                        cycle in a long run.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>The Details</h2>
+                    <p>While MTBF is one of the most widely used metrics in reliability engineering, it is also one that
+                        causes a great deal of confusion. By going through the theoretical definitions and alternative
+                        uses for MTBF, the reasons for this confusion become apparent.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Repairable Systems</h2>
+                    <p>In most reliability engineering literature, and particularly in theoretical literature such as
+                        research papers, MTBF represents the mean time between failures. It is applicable when several
+                        system failures are expected. This is possible only when the system is restored after a failure.
+                        The restoration can be performed by repair or replacement of some of its failed components. Such
+                        systems are known as maintainable systems or repairable systems.</p>
+                    <p>After restoration, the system may not be as good as new. This is because the repair of the failed
+                        components may be imperfect, warm components may still be present in the system, or all failed
+                        components may not have been restored. Once a restored system is returned to operation, it can
+                        fail again after some time. The failure of the system leads to downtime. Therefore, between two
+                        consecutive failures, the time can be divided into uptime and downtime. The time between
+                        failures is referred to as a <strong>failure-repair cycle time</strong>. In most cases, this
+                        time stochastically
+                        decreases with the age of the system. This means that although there are some random variations
+                        in time, on average, there is a decreasing trend. Therefore, strictly speaking, the MTBF of the
+                        system is a function of system age.</p>
+                    <p>If all system failures can be restored, then in a long run, the estimate of the cycle time
+                        becomes constant with respect to the system age. This is known as the <strong>steady-state
+                            condition </strong>.
+                        Theoretically, this condition exists as time tends to infinity. However, for reliable systems
+                        where downtime is small in comparison to uptime, the steady-state condition can be realized in a
+                        short time. Therefore, in practice, the MTBF is calculated by assuming that the system has
+                        reached the steady-state condition. Because the MTBF is the expected value of the failure-repair
+                        cycle time, it is sometimes referred to as the <strong>mean cycle time (MCT).</strong></p>
+                    <p>The values for uptimes and downtimes can also change with system age and reach their asymptotic
+                        values. The expected values of the uptime and downtime in the steady-state condition are known
+                        as the <strong>mean uptime (MUT)</strong> and <strong>mean downtime (MDT)</strong>. Because the
+                        uptime is equivalent to the
+                        failure time, it is also known as the <strong>mean time to failure (MTTF)</strong>. The downtime
+                        can consist of
+                        repair time and other delays. If there are no delays, then downtime is equivalent to the repair
+                        time. In this case, the mean downtime (MDT) is equivalent to the <strong>mean time to repair
+                            (MTTR)</strong>.
+                        MTTR is also known as <strong>mean corrective time</strong>. Under the steady-state condition,
+                        the following
+                        well-known relationships exist:</p>
+                    <p style="text-align: center"><strong>MCT = MUT + MDT</strong></p>
+                    <p>When there are no delays in repair:</p>
+                    <p style="text-align: center"><strong>MTBF = MTTF + MTTR</strong></p>
+                    <p style="text-align: center"><strong>Availability = MTTF/MTBF = MTTF/(MTTF + MTTR)</strong></p>
+                    <p>As discussed earlier, MTTF is a function of system age. The expected time to the first system
+                        failure is called the <strong>mean time to first failure (MTTFF)</strong>. MTTFF is important
+                        for systems where
+                        online repairs are tolerable but not offline repairs. The use of MTTF for both MTTFF and
+                        steady-state MUT is another source of confusion. It should be noted that for a single-component
+                        system, with perfect repair, MTTFF is equivalent to MUT. Therefore, regardless of what MTTF
+                        refers to, its value is the same for single-component systems. In the majority of systems, MDT
+                        or MTTR is negligible. In such cases, MTBF ≈ MTTF. Therefore, in most practical cases, MTTF is
+                        approximately equal to MTBF. This is obviously another source of confusion.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Non-Repairable Systems</h2>
+                    <p><span class="image right"><img src="../images/cache_888733773.jpg" alt=""></span>
+                        Some systems, such as spacecrafts, cannot be repaired after a major failure. In other cases,
+                        even
+                        though maintenance tasks can be performed offline, they cannot be performed during a mission.
+                        For all of these types of non-repairable systems, the time to system failure is an important
+                        reliability characteristic. The expected value is known as mean time to failure (MTTF). Because
+                        a non-repairable system can fail only once, both MTTFF and MTTF refer to the same metric.
+                        Because the time to failure is equivalent to the time before failure, some sources define MTBF
+                        as the mean time before failure, which actually means the MTTF. Using MTBF to represent the mean
+                        time before failure is one of the major sources for confusion on this topic.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Exponential Distribution</h2>
+                    <p>The exponential distribution plays an important role in reliability engineering. For the majority
+                        of systems, and particularly for electrical and digital systems, the failure distribution is
+                        exponential during its useful life. According to Drenick's theorem, even if individual
+                        components fail according to other distributions, in a long run, the successive times of a
+                        repairable series system follows the exponential distribution. In addition, using some simple
+                        transformations, a distribution such as Weibull can be expressed as an exponential distribution.
+                        Furthermore, according to the method of stages, any distribution can be expressed as a
+                        combination of exponential distributions.</p>
+                    <p>One of the parameters of the exponential distribution is the threshold value, which is used to
+                        indicate a time when failures are guaranteed not to occur. In many practical applications, the
+                        threshold parameter is assumed to be zero. In such cases, the exponential distribution has only
+                        one parameter, the rate parameter (λ). If the exponential distribution is used to model the time
+                        to failure, this parameter is known as the <strong>failure rate</strong> or <strong>hazard
+                            rate</strong>. The reciprocal of the
+                        rate parameter is equivalent to its distribution mean. Therefore, MTTF = 1/λ. This means that
+                        the distribution can be completely defined in terms of MTTF or λ.</p>
+                    <p>The majority of reliability (failure rate) prediction standards assume that the underlying
+                        distribution is exponential. In most standards, MTBF is used to represent the mean time before
+                        failure. Even if a standard defines MTBF as the mean time between failures, it inherently means
+                        MTTF because MTTR is almost negligible. Therefore, according to this terminology, MTBF is
+                        equivalent to the mean of the failure time distribution. This implies that MTBF = 1/λ.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Conclusion</h3>
+                    <p>As demonstrated in this article, there are many sources of confusion surrounding the use of
+                        reliability metrics, especially in regards to MTBF. By clarifying the underlying data and
+                        measurements, reliability metrics can be understood and used by reliability engineers to make
+                        meaningful statements about product reliability. Because reliability metrics are such important
+                        elements in reliability engineering, proper understanding and usage are critical. General
+                        information about many different reliability metrics can be found in <a
+                                href="./reliability-101.html">Reliability 101.</a></p>
+                </div>
+            </div>
+            </div>
+        <div id="returnbar" class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 align-center">
+                        <a href="../articles.html" class="button">Back to articles index</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="row d-none d-sm-block">
+                <div class="col-12">
+                    <p>
+                        <a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                                class="label">Email</span></a>
+                        <span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+                        <span class="hidden-small">&middot</span>
+                    </p>
+                </div>
+
+                <div class="col-12">
+                    <p>
+                        <span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+                        <span>(724) 510-0100</span>
+                        <span class="hidden-small">&middot</span>
+                    </p>
+                </div>
+
+                <div class="col-12">
+                    <p>
+                        <span class="icon solid alt fa-map"><span class="label">Address</span></span>
+                        <span>Export, PA 15632</span>
+                    </p>
+                </div>
+            </div>
+            <div class="d-sm-none">
+                <ul class="icons">
+                    <li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                            class="label">Email</span></a></li>
+                    <li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+                    <li>&middot</li>
+                    <li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span></li>
+                    <li>(724) 510-0100</li>
+                    <li>&middot</li>
+                    <li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+                    <li>Export, PA 15632</li>
+                </ul>
+            </div>
+
+            <ul class="copyright">
+                <li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+                <li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+                <script type="text/javascript">
+                    // set the year to the current year
+                    const el = document.getElementById("year");
+                    el.innerText = `${new Date().getFullYear()}`;
+                </script>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/jquery.dropotron.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

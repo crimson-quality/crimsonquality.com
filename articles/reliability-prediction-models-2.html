@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crimson Quality - Relex - PTC Windchill - Articles - Reliability Prediction Models Part 2</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+  <noscript>
+    <link rel="stylesheet" href="../assets/css/noscript.css"/>
+  </noscript>
+  <meta name="theme-color" content="#1c1d26"/>
+</head>
+<body class="is-preload landing">
+<div id="page-wrapper">
+  <!-- Header -->
+  <header id="header">
+    <a class="brand" href="../index.html"><img src="../images/logo.png" alt="Logo" /></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../products.html">Products</a>
+          <ul>
+            <li><a href="../products/prediction.html">Windchill Prediction</a></li>
+            <li><a href="../products/fmea.html">Windchill FMEA</a></li>
+            <li><a href="../products/fta.html">Windchill FTA</a></li>
+            <li><a href="../products/fracas.html">Windchill FRACAS</a></li>
+            <li><a href="../products/rbd.html">Windchill RBD</a></li>
+            <li><a href="../products/weibull.html">Windchill Weibull</a></li>
+            <li><a href="../products/alt.html">Windchill ALT</a></li>
+            <li><a href="../products/markov.html">Windchill Markov</a></li>
+            <li><a href="../products/maintainability.html">Windchill Maintainability</a></li>
+            <li><a href="../products/lcc.html">Windchill LCC</a></li>
+          </ul>
+        </li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../training.html">Training</a></li>
+        <li><a class="active" href="../articles.html">Articles</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+        <li><a href="../demo.html" class="button primary">Download Demo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="product-banner" class="article">
+    <div class="content">
+      <header>
+        <h2>Reliability Prediction Models</h2>
+        <p>Note: This is the second part of a three-part article. Part 1 identified the major factors in reliability
+          prediction models that contribute to predicting component failure. This article, Part 2, describes the most
+          widely accepted reliability prediction standards applied in current projects. Part 3 will provide guidelines
+          for making a sound judgment when deciding which standard to apply to a particular analysis.</p>
+        <h5>Part 2 of 3</h5>
+      </header>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <div id="main" class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Introduction</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>
+            <span class="image right"><img id="fig-1" src="../images/cache_885338094.jpg" alt="">
+            </span>
+            Reliability prediction model preferences vary greatly by industry and geographic location. In addition, the
+            various models have unique characteristics that may or may not make that particular standard a better fit
+            for your application. These characteristics include field or test data, confidence intervals and process
+            grades, among others.
+          </p>
+          <p>The following paragraphs explore the most popular reliability standards, including MIL-HDBK-217, Telcordia,
+            217Plus, NPRD/EPRD, and some lesser used models such as NSWC-98/LE1, PRISM, IEC62380, SN29500, HRD5, and
+            GJB/z 299B.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3>Most Popular Reliabiltiy Prediction Standards</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">MIL-HDBK-217</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The earliest standard to appear was MIL-HDBK-217, <i>Military Reliability Prediction of Electronic
+            Equipment</i>, developed by the United States Department of Defense (DOD) for their suppliers of military
+            equipment. Because of its age, and due to the fact that it was developed from a customer’s point of view,
+            MIL-HDBK-217 typically yields pessimistic results (i.e. higher predicted failure rate). There are several
+            approaches to overcome its pessimistic results, the most recent of which is the ANSI/VITA 51.1-2008
+            publication. Accepted and known worldwide, it is used by commercial companies and the defense industry.
+            MIL-HDBK-217 models support the ability to perform parts count and parts stress predictions.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Telecordia</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The Telcordia standard, <i>Reliability Prediction Procedure for Electronic Equipment</i> (Technical
+            Reference SR-322) was initially developed by AT&T Bell Lab, who modified MIL-HDBK-217 to better reflect
+            failure rates that they were experiencing in the field. Like MIL-HDBK-217, these models include the ability
+            to perform parts count or parts stress prediction. Telcordia also supports various calculation methods that
+            allow the user to refine their predicted failure rate based on burn-in, laboratory, and/or field data. In
+            addition, Telcordia supports user-definable confidence levels and calculation of a mean failure rate and
+            standard deviation for each part. The most current version is Telcordia Issue 3, released in 2011.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">217Plus</h4>
+          <p>
+            <span class="image left"><img id="217grades"
+                                          src="../images/cache_885339194.jpg"
+                                          alt="217Plus Process Grades">
+              <label class="img-label" for="217grades">217Plus Process Grades</label>
+            </span>
+            <i>Handbook of 217Plus Reliability Prediction Models</i> is the basis for the 217Plus standard. It was
+            published in 2006 by the Reliability Information Analysis Center (RiAC), a DoD Information Analysis Center.
+            The successor to the PRISM standard, 217Plus supports all the major component categories found in
+            MIL-HDBK-217. And like MIL-HDBK-217, 217Plus supports both parts count and parts stress predictions. This
+            standard allows the user to incorporate experiences from similar equipment utilizing Bayesian analysis, and
+            also accounts for “soft factors” related to the level of maturity of the supplier/manufacturer through the
+            use of Process Grade factors.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">NPRD and EPRD</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>While NPRD and EPRD Libraries are not technically calculation models, they supply failure rates for
+            thousands of parts.</p>
+          <p>These databooks are electronic databases of failure rates published by the RIAC (Reliability Information
+            Analysis Center). While reliability prediction standards like MIL-HDBK-217 contain mathematical models that
+            are derived from empirical field failure data, these databooks contain historically observed field failure
+            rates for commercial quality components and other part types not addressed by MIL-HDBK-217 that you can use
+            for unsupported part types. NPRD 2011 contains failure rates for more than 80,000 types of components.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3>Other Reliability Prediction Standards</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">FIDES 2009</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The FIDES models are based on the following publications published by the FIDES Group: FIDES Guide 2004
+            Issue A, Reliability Methodology for Electronic Systems and FIDES Guide 2009, Reliability Methodology for
+            Electronic Systems. The base failure rates calculated by a FIDES model are always adjusted by π (Pi) factors
+            for process grades, application factors, and ruggedized factors to take non-component variables into
+            account. The FIDES 2009 model can also adjust base failure rates by π factors for lead free factors. The
+            FIDES 2009 model supports families count, parts count, and parts stress, predictions.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">PRISM</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The PRISM model was released in March 2000. It deviates from traditional reliability prediction
+            methodologies by allowing you to factor in component, assembly, and system test data. It also addresses
+            system level design and manufacturing processes to refine the system prediction. The original PRISM model
+            included only six models (resistors, capacitors, diodes, transistors, microcircuits and thyristors). In
+            addition, component and system assessment models address not only operational aspects but also
+            non-operational and/or dormant aspects of a part or system. PRISM has since been superseded by 217Plus.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">IEC TR 62380</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The IEC TR 62380 model is based on <i>Reliability Data Handbook - Universal Model for Reliability
+            Prediction of Electronic Components, PCBs, and Equipment</i>, published by the International
+            Electrotechnical Commission (IEC). This standard has a complexity similar to Telcordia, but has its own
+            dedicated component categories, and therefore is not compatible with the other standards. IEC TR 62380 uses
+            cycling profiles and their applicable phases as a basis for failure rate calculations, and considers the
+            effects of thermal cycling on the component failure rate.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">Siemens SN 29500 v1</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The Siemens SN 29500 model is based on IEC 61709, Electronic Components - Reliability - Reference
+            Conditions for Failure Rates and Stress Models for Conversion. It provides frequently updated failure rate
+            data at reference conditions as well as parts count and parts stress predictions. The reference conditions
+            adopted by this model are typical for the majority of applications of components in systems. If operating
+            conditions differ significantly from reference conditions, this model supports converting the failure rate
+            data at the reference conditions to actual operating conditions.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">NSWC-98/LE1</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The Handbook of Reliability Prediction Procedures for Mechanical Equipment, developed by the Naval Surface
+            Warfare Center, contains reliability models for mechanical devices such as springs, bearings, seals, motors,
+            brakes, etc. The most recent version of this standard was released in September 1998.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">HRD5</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The Handbook of Reliability Data, published by British Telecom of the United Kingdom, is based on the
+            former RDF2000 standard, CNET 93. The most recent version was released in 1994.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h4 class="alt">GJB/z 299B</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>The 299 models are based on the GJB/z 299B and GJB/z 299C publications of the Chinese standard, Reliability
+            Prediction Model for Electronic Equipment. These models are similar to MIL-HDBK-217 models, supporting the
+            ability to perform both parts count and parts stress predictions. In addition to supporting more parts than
+            the 299B model, the 299C model provides alternate parts count and parts stress predictions for components
+            from foreign manufacturers.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Windchill Prediction can use any of the standards described in this article to assess the reliability of
+            your system design. Its superior integration enables you to mix calculation models within a single project,
+            allowing you to select the model most appropriate to each part or component in your design. With Windchill
+            Prediction, the additional analysis capabilities available in one model can typically be applied to any
+            model you use. For example, Telcordia calculation methods for taking field and test data into account in the
+            prediction can also be used with MIL-HDBK-217. Part 3 of this three-part article provides guidelines for
+            making a sound judgment when deciding which reliability prediction standard to apply to a particular
+            analysis. Additional information about Windchill Prediction, supported models, and predictive modeling in
+            general can be found by visiting our
+            <a href="../products/prediction.html">Windchill Prediction product page</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="returnbar" class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 align-center">
+          <a href="../articles.html" class="button">Back to articles index</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="row d-none d-sm-block">
+      <div class="col-12">
+        <p>
+          <a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+                class="label">Email</span></a>
+          <span><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></span>
+          <span class="hidden-small">&middot</span>
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p>
+          <span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span>
+          <span>(724) 510-0100</span>
+          <span class="hidden-small">&middot</span>
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p>
+          <span class="icon solid alt fa-map"><span class="label">Address</span></span>
+          <span>Export, PA 15632</span>
+        </p>
+      </div>
+    </div>
+    <div class="d-sm-none">
+      <ul class="icons">
+        <li><a href="mailto:info@crimsonquality.com" class="icon solid alt fa-envelope"><span
+              class="label">Email</span></a></li>
+        <li><a href="mailto:info@crimsonquality.com">info@crimsonquality.com</a></li>
+        <li>&middot</li>
+        <li><span class="icon solid alt fa-phone"><span class="label">Phone Number</span></span></li>
+        <li>(724) 510-0100</li>
+        <li>&middot</li>
+        <li><span class="icon solid alt fa-map"><span class="label">Address</span></span></li>
+        <li>Export, PA 15632</li>
+      </ul>
+    </div>
+
+    <ul class="copyright">
+      <li>&copy; Crimson Quality <span id="year"></span>. All rights reserved.</li>
+      <li>Site by: Crimson Quality using base <a href="https://html5up.net">Landed</a></li>
+      <script type="text/javascript">
+        // set the year to the current year
+        const el = document.getElementById("year");
+        el.innerText = `${new Date().getFullYear()}`;
+      </script>
+    </ul>
+  </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/jquery.dropotron.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>
