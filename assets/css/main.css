@@ -68,7 +68,7 @@ html {
   box-sizing: inherit; }
 
 html, body {
-  background: #F8F9FA; }
+  background: #1c1d26; }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
   -moz-animation: none !important;
